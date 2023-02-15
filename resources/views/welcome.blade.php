@@ -88,7 +88,7 @@
                     <a href="https://laravel.com/docs">Prova</a>
                     <a href="https://laracasts.com">Ciao</a>
                     <a href="https://laravel-news.com">Prova 2</a>
-                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://blog.laravel.com">Prova 3</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
