@@ -12,16 +12,15 @@ class CategoryUserSeeder extends Seeder
      */
     public function run()
     {
-        $categoriesUsers = [
+        $categoriesUsers = [];
 
-        ];
-        for($i = 0; $i < 10; $i++) {
+        for($i = 0; $i < 20; $i++) {
             $categoriesUsers[$i]['category_id'] = rand(1, 8);
             $categoriesUsers[$i]['user_id'] = rand(1, 5);
         };
 
-        foreach($categoriesUsers as $categoriesUser){
-            DB::table('category_user')->insert($categoriesUser);
+        foreach($categoriesUsers as $categoriesCouple){
+            DB::table('category_user')->insert($categoriesCouple);
         }
     }
 }
