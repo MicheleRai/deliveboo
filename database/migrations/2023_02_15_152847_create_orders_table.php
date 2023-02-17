@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('email_user',50);
             $table->string('name_user',50);
-            $table->string('address',50);
+            $table->string('address');
             $table->string('note')->nullable();
             $table->decimal('tot_price', 6, 2)->unsigned();
             $table->timestamps();
