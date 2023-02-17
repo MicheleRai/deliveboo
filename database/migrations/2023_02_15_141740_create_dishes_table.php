@@ -18,7 +18,7 @@ class CreateDishesTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('name', 50);
             $table->text('description');
-            $table->smallInteger('price')->unsigned();
+            $table->decimal('price', 6, 2)->unsigned();
             $table->boolean('visible')->default(1);
             $table->string('image')->nullable();
             $table->timestamps();

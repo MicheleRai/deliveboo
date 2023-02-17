@@ -15,12 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
             $table->string('email_user',50);
             $table->string('name_user',50);
             $table->string('address',50);
-            $table->string('credit_card');
-            $table->smallInteger('tot_price')->unsigned();
+            $table->string('note')->nullable();
+            $table->decimal('tot_price', 6, 2)->unsigned();
             $table->timestamps();
         });
     }

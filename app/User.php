@@ -42,7 +42,4 @@ class User extends Authenticatable
     public function categories(){
         return $this->belongsToMany('App\Category');
     }
-    public function orders(){
-        return $this->hasMany('App\Order');
-    }
 }
