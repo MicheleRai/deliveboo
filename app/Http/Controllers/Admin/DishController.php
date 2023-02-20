@@ -29,7 +29,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dishes.create');
     }
 
     /**
@@ -40,7 +40,19 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $dish = new Dish();
+        $dish->user_id = Auth::user()->id;
+        $dish->name = $data['name'];
+        $dish->price = $data['price'];
+        $dish->description = $data['description'];
+        $dish->visible = $request->has('visible');
+        $dish->image = $data['image'];
+        $dish->save();
+
+        return redirect()->route('admin.dishes.show',
+        [ 'dish' => $dish ]);
     }
 
     /**
@@ -51,7 +63,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return  view('admin.dishes.show',compact('dish'));
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -62,7 +74,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -74,7 +86,18 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        //
+        $data = $request->all();
+
+        $dish->user_id = Auth::user()->id;
+        $dish->name = $data['name'];
+        $dish->price = $data['price'];
+        $dish->description = $data['description'];
+        $dish->visible = $request->has('visible');
+        $dish->image = $data['image'];
+        $dish->update();
+
+        return redirect()->route('admin.dishes.show',
+        [ 'dish' => $dish ]);
     }
 
     /**
