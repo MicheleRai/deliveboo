@@ -27,6 +27,7 @@ Route::middleware('auth')
 ->group(function () {
     Route::get('/', 'AdminController@index')->name('home');
     Route::resource('dishes', 'DishController');
+    Route::resource('orders', 'OrderController');
 });
 
 
