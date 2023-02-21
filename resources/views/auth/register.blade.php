@@ -52,6 +52,32 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="logo_image" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="logo_image" type="logo_image" class="form-control @error('logo_image') is-invalid @enderror" name="logo_image" value="{{ old('logo_image') }}" required autocomplete="logo_image">
+
+                                @error('logo_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cover_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine di copertina') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cover_image" type="cover_image" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" value="{{ old('cover_image') }}" required autocomplete="cover_image">
+
+                                @error('cover_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">

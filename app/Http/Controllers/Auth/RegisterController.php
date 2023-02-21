@@ -56,6 +56,8 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:50'],
             'vat_number' => ['required', 'numeric', 'max:99999999999'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'logo_image' => ['string'],
+            'cover_image' => ['string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -75,6 +77,8 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
             'email' => $data['email'],
+            'logo_image' => $data['logo_image'],
+            'cover_image' => $data['cover_image'],
             'password' => Hash::make($data['password']),
         ]);
     }

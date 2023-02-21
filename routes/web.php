@@ -28,6 +28,7 @@ Route::middleware('auth')
     Route::get('/', 'AdminController@index')->name('home');
     Route::resource('dishes', 'DishController');
     Route::resource('orders', 'OrderController');
+    Route::resource('users', 'UserController');
 });
 
 
