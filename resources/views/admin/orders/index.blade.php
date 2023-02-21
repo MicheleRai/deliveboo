@@ -16,7 +16,6 @@
                     <a href="{{ route('admin.orders.show', ['order' => $order->order_id ])}}" class="btn btn-primary">Dettagli ordine</a>
                 </td>
             </tr>
-
-@endforeach
+        @endforeach
 </div>
 @endsection

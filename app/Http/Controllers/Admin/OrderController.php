@@ -20,7 +20,9 @@ class OrderController extends Controller
         $orders = DB::table('orders')
                     ->join('dish_order', 'orders.id', '=', 'dish_order.order_id')
                     ->join('dishes', 'dish_id', '=', 'dishes.id')
-                    ->where('user_id', Auth::user()->id)->get();
+                    ->where('user_id', Auth::user()->id)
+                    ->orderBy('orders.id', 'asc')
+                    ->get();
         // dd($orders);
         return view('admin.orders.index', compact('orders'));
     }
