@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'dadavide@gmail.com',
                 'password' => Hash::make('password'),
-                'restaurant_name' => 'Da Davide',
+                'name' => 'Da Davide',
                 'address' => 'Via Mazzini, 24 - Alba Adriatica (TE)',
                 'vat_number' => '01234567890',
                 'slug' => 'da-davide',
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'daluigi@gmail.com',
                 'password' => Hash::make('password'),
-                'restaurant_name' => 'Da Luigi',
+                'name' => 'Da Luigi',
                 'address' => 'Via Silone, 56 - Nereto (TE)',
                 'vat_number' => '01234567891',
                 'slug' => 'da-luigi',
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'daandrea@gmail.com',
                 'password' => Hash::make('password'),
-                'restaurant_name' => 'Da Andrea',
+                'name' => 'Da Andrea',
                 'address' => 'Viale Virgilio, 3 - Andria (BT)',
                 'vat_number' => '01234567892',
                 'slug' => 'da-andrea',
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'dakenta@gmail.com',
                 'password' => Hash::make('password'),
-                'restaurant_name' => 'Da Kenta',
+                'name' => 'Da Kenta',
                 'address' => 'Piazza San Marco, 35 - Firenze (FI)',
                 'vat_number' => '01234567893',
                 'slug' => 'da-kenta',
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'damichele@gmail.com',
                 'password' => Hash::make('password'),
-                'restaurant_name' => 'Da Michele',
+                'name' => 'Da Michele',
                 'address' => 'Viale Le Noci, 18 - Bari (BA)',
                 'vat_number' => '01234567894',
                 'slug' => 'da-michele',

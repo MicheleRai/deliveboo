@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Traits\Slugger;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Unique;
 
 class RegisterController extends Controller
 {
@@ -50,7 +52,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:50'],
+            'address' => ['required', 'string', 'max:50'],
+            'vat_number' => ['required', 'numeric', 'max:99999999999'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -64,8 +68,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
+            'slug' => User::getSlug($data['name']),
             'name' => $data['name'],
+            'address' => $data['address'],
+            'vat_number' => $data['vat_number'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
