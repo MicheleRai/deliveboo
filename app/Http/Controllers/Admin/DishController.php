@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
+    private $validations = [
+        'name'        => 'required|max:50|string',
+        'price'       => 'required|numeric|between:0.00,9999.99',
+        'description' => 'required|string',
+        'image'       => 'url'
+    ];
+
+    // TODO: cambiare il sistema di caricamento delle immagini
+
     /**
      * Display a listing of the resource.
      *
@@ -40,8 +49,8 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->validations);
         $data = $request->all();
-
         $dish = new Dish();
         $dish->user_id = Auth::user()->id;
         $dish->name = $data['name'];
@@ -86,6 +95,7 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
+        $request->validate($this->validations);
         $data = $request->all();
 
         $dish->user_id = Auth::user()->id;
