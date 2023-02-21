@@ -82,7 +82,18 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#">Ordini </a>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Ordini
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('admin.orders.index') }}">
+                                      Indice ordini
+                                    </a>
+                                    {{-- <a class="dropdown-item" href="{{ route('admin.dishes.create') }}">
+                                      Aggiungi nuovo piatto
+                                    </a> --}}
+                                </div>
                             </li>
                         @endguest
                     </ul>

@@ -79,7 +79,7 @@
             />
         </div>
         <div class="col-12">
-            <button class="btn btn-primary" type="submit">Aggiungi piatto</button>
+            <button class="btn btn-primary" type="submit">Modifica piatto</button>
         </div>
     </form>
 </div>
