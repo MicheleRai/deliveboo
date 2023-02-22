@@ -19,7 +19,7 @@ Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('r
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.home');
 });
 
 
