@@ -57,6 +57,22 @@
                         <label for="cover_image"><strong>Immagine di copertina:</strong></label>
                         <input type="text" class="form-control" id ="cover_image" value="{{Auth::user()->cover_image}}" name="cover_image">
                     </div>
+                    <div id="category" class="col-md-6 position-relative">
+                        @foreach ($categories as $category)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="categories[]"
+                                    id="category-{{ $category->name }}" value="{{ $category->id }}">
+                                <label class="form-check-label" for="category-{{ $category->id }}">
+                                    {{ $category->name }}
+                                </label>
+                            </div>
+                        @endforeach
+                        @if ($errors->has('categories') || $errors->has('categories.*'))
+                            <div class="text-danger border border-danger p-1 mt-3">
+                                Errore con le categorie selezionati
+                            </div>
+                        @endif
+                    </div>
                         <button class="btn btn-primary" type="submit">Update Profile</button>
                    </form>
                 </div>

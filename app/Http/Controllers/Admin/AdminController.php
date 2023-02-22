@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $categories = Category::all();
+        return view('admin.home', compact('categories'));
     }
 
     public function profileUpdate(Request $request){
@@ -35,13 +37,13 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required|string|max:50',
             'address' => 'required|string|max:50',
-            'vat_number' => 'required|numeric|max:99999999999',
+            'vat_number' => 'required|numeric|digits:11',
             'logo_image' => 'string',
             'cover_image' => 'string',
         ]);
 
         // TODO: save changes
-        $user =Auth::user();
+        $user = Auth::user();
         $user->name = $request['name'];
         $user->address = $request['address'];
         $user->vat_number = $request['vat_number'];
@@ -50,6 +52,8 @@ class AdminController extends Controller
         $user->slug = $request[User::getSlug('name')];
         $user->save();
 
-        return back()->with('message','Profile Updated');
+        $user->categories()->sync($request['categories']);
+
+        return back()->with('message','Profilo Aggiornato');
     }
 }

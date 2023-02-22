@@ -18,12 +18,13 @@ class OrderController extends Controller
     public function index()
     {
         $orders = DB::table('orders')
-                    ->join('dish_order', 'orders.id', '=', 'dish_order.order_id')
-                    ->join('dishes', 'dish_id', '=', 'dishes.id')
-                    ->where('user_id', Auth::user()->id)
-                    ->orderBy('orders.id', 'asc')
-                    ->get();
-        // dd($orders);
+        ->select(DB::raw('COUNT(order_id) as numero_piatti, order_id, orders.address, orders.tot_price, orders.created_at'))
+        ->join('dish_order','orders.id','=','dish_order.order_id')
+        ->join('dishes','dish_id','=','dishes.id')
+        ->where('user_id','=',5)
+        ->groupBy('order_id')
+        ->get();
+
         return view('admin.orders.index', compact('orders'));
     }
 

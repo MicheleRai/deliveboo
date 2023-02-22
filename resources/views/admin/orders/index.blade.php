@@ -8,6 +8,7 @@
                 <th scope="col">Numero ordine</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Orario</th>
+                <th scope="col">Numero piatti ordinati</th>
                 <th scope="col">Prezzo totale</th>
             </tr>
         </thead>
@@ -17,6 +18,7 @@
                 <th scope="row">{{ $order->order_id }}</th>
                 <th scope="row">{{ $order->address }}</th>
                 <th scope="row">{{ $order->created_at }}</th>
+                <th scope="row">{{ $order->numero_piatti }}</th>
                 <th scope="row">&euro;{{ $order->tot_price }}</th>
                     <td>
                         <a href="{{ route('admin.orders.show', ['order' => $order->order_id ])}}" class="btn btn-primary">Dettagli ordine</a>
@@ -25,5 +27,4 @@
             @endforeach
         </tbody>
     </table>
-</div>
 @endsection

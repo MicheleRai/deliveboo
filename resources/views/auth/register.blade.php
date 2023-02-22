@@ -131,21 +131,6 @@
                                         Errore con le categorie selezionati
                                     </div>
                                 @endif
-
-                                {{-- @foreach ($tags as $tag)
-                                    <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="{{ $tag->id }}" id="tag-{{ $tag->name }}" name="tags[]"
-                                    @if (in_array($tag->id, old('tags',[]))) checked @endif>
-                                    <label class="form-check-label" for="tag-{{ $tag->name }}">
-                                        {{ $tag->name }}
-                                    </label>
-                                    </div>
-                                @endforeach
-                                @if ($errors->has('tags') || $errors->has('tags.*'))
-                                    <div class="text-danger border border-danger p-1 mt-3">
-                                        Errore con i tag selezionati
-                                    </div>
-                                @endif --}}
                             </div>
                         </div>
 
