@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::middleware('auth')
 ->namespace('Admin')
@@ -26,9 +29,9 @@ Route::middleware('auth')
 ->prefix('admin')
 ->group(function () {
     Route::get('/', 'AdminController@index')->name('home');
+    Route::post('/','AdminController@profileUpdate')->name('profileupdate'); //TODO:
     Route::resource('dishes', 'DishController');
     Route::resource('orders', 'OrderController');
-    Route::resource('users', 'UserController');
 });
 
 

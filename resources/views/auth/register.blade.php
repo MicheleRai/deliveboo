@@ -50,33 +50,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="logo_image" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="logo_image" type="logo_image" class="form-control @error('logo_image') is-invalid @enderror" name="logo_image" value="{{ old('logo_image') }}" required autocomplete="logo_image">
-
-                                @error('logo_image')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="cover_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine di copertina') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="cover_image" type="cover_image" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" value="{{ old('cover_image') }}" required autocomplete="cover_image">
-
-                                @error('cover_image')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
@@ -110,6 +83,69 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="logo_image" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="logo_image" type="logo_image" class="form-control @error('logo_image') is-invalid @enderror" name="logo_image" value="{{ old('logo_image') }}" autocomplete="logo_image">
+
+                                @error('logo_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cover_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine di copertina') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cover_image" type="cover_image" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" value="{{ old('cover_image') }}" autocomplete="cover_image">
+
+                                @error('cover_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group position-relative row">
+                            <label for="category"
+                                class="col-md-4 col-form-label text-md-right">{{ __('Seleziona categorie*') }}</label>
+
+                            <div id="category" class="col-md-6 position-relative">
+                                @foreach ($categories as $category)
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="categories[]"
+                                            id="category-{{ $category->name }}" value="{{ $category->id }}" @if (in_array($category->id, old('categories',[]))) checked @endif>
+                                        <label class="form-check-label" for="category-{{ $category->id }}">
+                                            {{ $category->name }}
+                                        </label>
+                                    </div>
+                                @endforeach
+                                @if ($errors->has('categories') || $errors->has('categories.*'))
+                                    <div class="text-danger border border-danger p-1 mt-3">
+                                        Errore con le categorie selezionati
+                                    </div>
+                                @endif
+
+                                {{-- @foreach ($tags as $tag)
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="{{ $tag->id }}" id="tag-{{ $tag->name }}" name="tags[]"
+                                    @if (in_array($tag->id, old('tags',[]))) checked @endif>
+                                    <label class="form-check-label" for="tag-{{ $tag->name }}">
+                                        {{ $tag->name }}
+                                    </label>
+                                    </div>
+                                @endforeach
+                                @if ($errors->has('tags') || $errors->has('tags.*'))
+                                    <div class="text-danger border border-danger p-1 mt-3">
+                                        Errore con i tag selezionati
+                                    </div>
+                                @endif --}}
                             </div>
                         </div>
 

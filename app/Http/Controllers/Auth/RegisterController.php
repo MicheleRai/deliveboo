@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use App\Traits\Slugger;
+use App\Category;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Traits\Slugger;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Validation\Rules\Unique;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
+    public function showRegistrationForm() {
+        $categories = Category::all();
+        return view('auth.register', compact('categories'));
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -71,7 +78,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        return User::create([
+        $user = User::create([
             'slug' => User::getSlug($data['name']),
             'name' => $data['name'],
             'address' => $data['address'],
@@ -81,5 +88,9 @@ class RegisterController extends Controller
             'cover_image' => $data['cover_image'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->categories()->attach($data['categories']);
+
+        return $user;
     }
 }

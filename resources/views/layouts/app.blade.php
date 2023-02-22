@@ -55,8 +55,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    {{-- TODO --}}
-                                    <a class="dropdown-item" href="{{ route('admin.users.edit', ['user'=>$users]) }}">
+                                    <a class="dropdown-item" href="{{ route('admin.home') }}">
                                         Modifica profilo
                                       </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
