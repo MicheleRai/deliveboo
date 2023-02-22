@@ -1,6 +1,6 @@
 <template>
     <div class="grid">
-       <h1>Sono la pagina degli ordini in vue</h1>
+       <h1>Sono la pagina dei piatti in vue</h1>
     </div>
 </template>
 
