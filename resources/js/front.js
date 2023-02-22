@@ -14,10 +14,12 @@ import PageDish from './pages/PageDish';
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+    mode:'history',
     routes: [
 
         {
            path: '/',
+           name: 'restaurant',
            component: PageHome,
         },
 
@@ -32,7 +34,8 @@ const router = new VueRouter({
         },
 
         {
-           path: '/dishes',
+           path: '/dishes/:slug',
+           name: 'dishes-user',
            component: PageDishes,
         },
     ]
@@ -41,5 +44,6 @@ const router = new VueRouter({
 new Vue({
     el: '#root',
     render: h => h(App),
-    router //equivale a scrivere router: router perché abbiamo lo stesso nome della variabile
+    router, //equivale a scrivere router: router perché abbiamo lo stesso nome della variabile
+
 })

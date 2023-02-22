@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/dishes', 'Api\DishController@index')->name('dishes.index');
 Route::get('/dishes/{dish}', 'Api\DishController@show')->name('dishes.show');
+
+Route::get('/users', 'Api\UserController@index')->name('users.index');
+Route::get('/users/{user}', 'Api\UserController@show')->name('users.show');
