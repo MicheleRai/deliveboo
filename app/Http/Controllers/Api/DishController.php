@@ -18,13 +18,10 @@ class DishController extends Controller
      */
     public function index()
     {
-        // $dishes = Dish::where('user_id', Auth::user()->id)->get();
-        // $user = User::where(Auth::user()->id);
-        // $dishes = Dish::whereBelongsTo($user)->get();
-        $dishes = Dish::all();
-        // $dishes = DB::table('dishes')->lists('user_id', 'name', 'price','image');
-        // $dishes = Dish::where('user_id', 1)->get();
-        // $user = DishDB::select('select * from users where active = ?', [1])
+        $dishes = User::join("dishes", function($join){
+	            $join->on("users.id", "=", "dishes.user_id");
+            })
+            ->where("users.slug", "=", 'user.id')->get();
 
         return response()->json ([
             'success' => true,

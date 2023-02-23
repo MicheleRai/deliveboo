@@ -5243,7 +5243,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "grid"
   }, [_vm._m(0), _vm._v(" "), _c("h1", [_vm._v("Sono la home in vue")]), _vm._v(" "), _c("div", {
-    staticClass: "row row-cols-4 col-10 m-auto"
+    staticClass: "row row-cols-3 col-10 m-auto"
   }, _vm._l(_vm.arrUsers, function (user) {
     return _c("div", {
       key: user.id,
@@ -5306,7 +5306,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("Home")]), _vm._v(" "), _c("a", {
     staticClass: "nav-link active btn btn-primary text-light",
     attrs: {
-      href: "http://127.0.0.1:8000/login"
+      href: "/login"
     }
   }, [_vm._v("Sei un ristoratore? Clicca qui")])])])])]);
 }];
@@ -5372,7 +5372,7 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]({
-  mode: 'history',
+  mode: 'hash',
   routes: [{
     path: '/',
     name: 'restaurant',
