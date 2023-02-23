@@ -21,10 +21,10 @@ class DishController extends Controller
         // $dishes = Dish::where('user_id', Auth::user()->id)->get();
         // $user = User::where(Auth::user()->id);
         // $dishes = Dish::whereBelongsTo($user)->get();
-        // $dishes = Dish::all();
+        $dishes = Dish::all();
         // $dishes = DB::table('dishes')->lists('user_id', 'name', 'price','image');
-        $dishes = Dish::where('user_id')->get();
-        $user = DishDB::select('select * from users where active = ?', [1])
+        // $dishes = Dish::where('user_id', 1)->get();
+        // $user = DishDB::select('select * from users where active = ?', [1])
 
         return response()->json ([
             'success' => true,
@@ -59,8 +59,9 @@ class DishController extends Controller
      * @param  \App\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show($dish)
     {
+        $dish = Dish::all();
         return response()->json ([
             'success' => true,
             'results' => $dish,
