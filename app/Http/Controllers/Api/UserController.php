@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Dish;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
-class DishController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,18 +15,13 @@ class DishController extends Controller
      */
     public function index()
     {
-        // $dishes = Dish::where('user_id', Auth::user()->id)->get();
-        // $user = User::where(Auth::user()->id);
-        // $dishes = Dish::whereBelongsTo($user)->get();
-        $dishes = Dish::all();
-        // $dishes = DB::table('dishes')->lists('user_id', 'name', 'price','image');
-        // $dishes = Dish::where('user_id', 1)->get();
-        // $user = DishDB::select('select * from users where active = ?', [1])
+        $users = User::all();
 
         return response()->json ([
             'success' => true,
-            'results' => $dishes,
+            'results' => $users,
         ]);
+        dd($users);
     }
 
     /**
@@ -56,25 +48,24 @@ class DishController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($dish)
+    public function show(User $user)
     {
-        $dish = Dish::all();
         return response()->json ([
             'success' => true,
-            'results' => $dish,
+            'results' => $user,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dish $dish)
+    public function edit(User $user)
     {
         //
     }
@@ -83,10 +74,10 @@ class DishController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dish  $dish
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -94,10 +85,10 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dish $dish)
+    public function destroy(User $user)
     {
         //
     }
