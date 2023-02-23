@@ -14,7 +14,7 @@ import PageDish from './pages/PageDish';
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-    mode:'history',
+    mode:'hash',
     routes: [
 
         {
