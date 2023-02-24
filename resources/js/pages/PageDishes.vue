@@ -5,6 +5,7 @@
            <img :src="dish.image" alt="logo">
            <h3>{{ dish.name }}</h3>
            <p>&euro; {{ dish.price }}</p>
+           <button class="btn btn-success" @click="$emit('addCart', dish.name)"> Aggiungi al carrello</button>
         </div>
    </div>
 </template>
@@ -20,11 +21,14 @@
                 arrDishes:[],
             }
         },
+
         created(){
             axios.get('/api/dishes/' + this.slug)
                 .then(response => this.arrDishes = response.data.results);
                 console.log(this.arrDishes);
         },
+
+
     }
 </script>
 <style lang="scss">
