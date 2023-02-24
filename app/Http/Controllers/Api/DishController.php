@@ -18,14 +18,11 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = User::join("dishes", function($join){
-	            $join->on("users.id", "=", "dishes.user_id");
-            })
-            ->where("users.slug", "=", 'user.id')->get();
+        $users = User::all();
 
         return response()->json ([
             'success' => true,
-            'results' => $dishes,
+            'results' => $users,
         ]);
     }
 
@@ -58,10 +55,13 @@ class DishController extends Controller
      */
     public function show($dish)
     {
-        $dish = Dish::all();
+        $menu = User::where('slug', $dish)->first();
+
+        $menu->dishes = Dish::where('user_id', $menu->id)->get();
+
         return response()->json ([
             'success' => true,
-            'results' => $dish,
+            'results' => $menu,
         ]);
     }
 

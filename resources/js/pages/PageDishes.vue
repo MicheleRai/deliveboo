@@ -1,24 +1,29 @@
 <template>
-    <div class="grid">
+    <div class="container">
       <h1>Sono la pagina dei piatti specifici in vue</h1>
-        <div v-for="dish in arrDishes" :key="dish.user_id">
+        <div v-for="dish in arrDishes.dishes" :key="dish.id">
            <img :src="dish.image" alt="logo">
            <h3>{{ dish.name }}</h3>
-           <p>{{ dish.price }}</p>
+           <p>&euro; {{ dish.price }}</p>
         </div>
    </div>
 </template>
 <script>
     export default {
         name: 'PageDishes',
+        props: [
+        'slug',
+        ],
+
         data(){
             return {
                 arrDishes:[],
             }
         },
         created(){
-            axios.get('/api/dishes')
-                .then(response => this.arrDishes = response.data.results)
+            axios.get('/api/dishes/' + this.slug)
+                .then(response => this.arrDishes = response.data.results);
+                console.log(this.arrDishes);
         },
     }
 </script>
