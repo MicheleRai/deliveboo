@@ -61,7 +61,10 @@
                         @foreach ($categories as $category)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="categories[]"
-                                    id="category-{{ $category->name }}" value="{{ $category->id }}">
+                                    id="category-{{ $category->name }}" value="{{ $category->id }}"
+                                    @if (in_array($category->id, old('categories', $user->categories->pluck('id')->all()))) checked
+                                    @endif
+                                    >
                                 <label class="form-check-label" for="category-{{ $category->id }}">
                                     {{ $category->name }}
                                 </label>

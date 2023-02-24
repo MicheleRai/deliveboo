@@ -28,8 +28,12 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $categories = Category::all();
-        return view('admin.home', compact('categories'));
+        return view('admin.home', [
+            'user' => $user,
+            'categories' => $categories
+        ]);
     }
 
     public function profileUpdate(Request $request){
@@ -50,9 +54,8 @@ class AdminController extends Controller
         $user->vat_number = $request['vat_number'];
         $user->logo_image = $request['logo_image'];
         $user->cover_image = $request['cover_image'];
-        $user->slug = $request[User::getSlug('name')];
+        $user->slug = User::getSlug($request['name']);
         $user->save();
-
         $user->categories()->sync($request['categories']);
 
         return back()->with('message','Profilo Aggiornato');

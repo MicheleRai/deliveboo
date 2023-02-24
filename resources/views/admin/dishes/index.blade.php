@@ -26,9 +26,4 @@
     @endforeach
 
 </div>
-{{-- @else --}}
-    <div class="div">
-        <h1>Non hai accesso a questa sezione!</h1>
-    </div>
-{{-- @endif --}}
 @endsection
