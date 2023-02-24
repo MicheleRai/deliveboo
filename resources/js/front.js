@@ -9,7 +9,6 @@ import VueRouter from 'vue-router';
 import PageHome from './pages/PageHome';
 import PageOrder from './pages/PageOrder';
 import PageDishes from './pages/PageDishes';
-import PageDish from './pages/PageDish';
 
 Vue.use(VueRouter)
 
@@ -23,11 +22,6 @@ const routes = [
     {
         path: '/order',
         component: PageOrder,
-    },
-
-    {
-        path: '/dish',
-        component: PageDish,
     },
 
     {
