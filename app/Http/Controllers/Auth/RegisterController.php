@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Category;
 use App\User;
+use App\Category;
 use App\Traits\Slugger;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Unique;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -63,8 +64,8 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:50'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'logo_image' => ['string'],
-            'cover_image' => ['string'],
+            'logo_image' => ['image', 'max:1024'],
+            'cover_image' => ['image', 'max:1024'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -77,6 +78,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // if(request()->hasfile('logo_image')){
+        //     $logo_path = time().'.'.request()->logo_image->getClientOriginalExtension();
+        //     request()->logo_image->move(public_path('uploads'), $logo_path);
+        // }
+        // if(request()->hasfile('cover_image')){
+        //     $cover_path = time().'.'.request()->avatar->getClientOriginalExtension();
+        //     request()->avatar->move(public_path('uploads'), $cover_path);
+        // }
+
+        $logo_path = Storage::put('uploads', $data['logo_image']);
+        $cover_path = Storage::put('uploads', $data['cover_image']);
 
         $user = User::create([
             'slug' => User::getSlug($data['name']),
@@ -84,8 +96,8 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
             'email' => $data['email'],
-            'logo_image' => $data['logo_image'],
-            'cover_image' => $data['cover_image'],
+            'logo_image' => $logo_path ?? NULL,
+            'cover_image' => $cover_path ?? NULL,
             'password' => Hash::make($data['password']),
         ]);
 

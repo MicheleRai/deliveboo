@@ -7,7 +7,7 @@
 <div class="container row row-cols-3 m-auto">
     @foreach ($dishes as $dish)
         <div class="card">
-            <img src="{{ $dish->image }}" alt="img">
+            <img src="{{ asset('storage/' . $dish->image) }}" alt="img">
             <h2>{{ $dish->name }}</h2>
             <div>{{ $dish->price }}</div>
             @if ($dish->visible == 1)
