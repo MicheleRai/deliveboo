@@ -20,9 +20,7 @@ class OrderAuth
     {
         if ($request->route('id')) {
             $orders = Order::find($request->route('id'));
-            $orders_id= 1;
-            if ($orders && $orders_id->dish_id != auth()->user()->id)
-            {
+
                 return redirect('/');
             }
         }

@@ -13,33 +13,35 @@ import PageDish from './pages/PageDish';
 
 Vue.use(VueRouter)
 
+const routes = [
+    {
+        path: '/',
+        name: 'PageHome',
+        component: PageHome,
+    },
+
+    {
+        path: '/order',
+        component: PageOrder,
+    },
+
+    {
+        path: '/dish',
+        component: PageDish,
+    },
+
+    {
+        path: '/dishes/:slug',
+        name: 'dishes-user',
+        component: PageDishes,
+        props:true,
+    }
+]
+
 const router = new VueRouter({
-    mode:'hash',
-    routes: [
-
-        {
-           path: '/',
-           name: 'restaurant',
-           component: PageHome,
-        },
-
-        {
-           path: '/order',
-           component: PageOrder,
-        },
-
-        {
-           path: '/dish',
-           component: PageDish,
-        },
-
-        {
-           path: '/dishes/:slug',
-           name: 'dishes-user',
-           component: PageDishes,
-        },
-    ]
-})
+    mode: 'hash',
+    routes,
+});
 
 new Vue({
     el: '#root',

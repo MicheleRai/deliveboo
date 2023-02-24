@@ -34,7 +34,7 @@
             }
         },
         created(){
-            axios.get('/api/users')
+            axios.get('/api/dishes')
                 .then(response => this.arrUsers = response.data.results)
                 console.log(this.arrUsers);
         },
