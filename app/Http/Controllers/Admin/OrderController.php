@@ -21,7 +21,7 @@ class OrderController extends Controller
         ->select(DB::raw('COUNT(order_id) as numero_piatti, order_id, orders.address, orders.tot_price, orders.created_at'))
         ->join('dish_order','orders.id','=','dish_order.order_id')
         ->join('dishes','dish_id','=','dishes.id')
-        ->where('user_id','=',5)
+        ->where('user_id','=',Auth::user()->id)
         ->groupBy('order_id')
         ->get();
 

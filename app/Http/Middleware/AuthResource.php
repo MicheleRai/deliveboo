@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Dish;
+use App\Order;
 use App\User;
 use Closure;
 
@@ -24,8 +25,8 @@ class AuthResource
                     return redirect('/');
                 }
             }
-
             return $next($request);
         }
+
     }
 }
