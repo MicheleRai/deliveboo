@@ -57,27 +57,37 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        $search =
-        DB::table("orders")
-            ->join("dish_order", function($join){
-                $join->on("orders.id", "=", "dish_order.order_id");
-            })
-            ->join("dishes", function($join){
-                $join->on("dish_order.dish_id", "=", "dishes.id");
-            })
-            ->join("users", function($join){
-                $join->on("dishes.user_id", "=", "users.id");
-            })
-            ->select("dishes.user_id")
-            ->where("users.id", "=", Auth::user()->id)
-            ->groupBy("users.id")
-            ->get();
-            $prova = $search[0]->user_id;
-        // dd($search[0]->user_id);
-        if(Auth::id() !== $prova){
-            return view('auth.error')->withErrors('You cannot do that');
+        // $search =
+        // DB::table("orders")
+        //     ->join("dish_order", function($join){
+        //         $join->on("orders.id", "=", "dish_order.order_id");
+        //     })
+        //     ->join("dishes", function($join){
+        //         $join->on("dish_order.dish_id", "=", "dishes.id");
+        //     })
+        //     ->join("users", function($join){
+        //         $join->on("dishes.user_id", "=", "users.id");
+        //     })
+        //     ->select("dishes.user_id")
+        //     ->where("orders.id", "=", $order->id)
+        //     ->groupBy("users.id")
+        //     ->get();
+        // // dd($search[0]->user_id);
+        // // dd($search);
+        // if(in_array(Auth::id(), $search->items)){
+        //     return view('auth.error');
+        // } else{
+        // return view('admin.orders.show', compact('order'));
+        // }
+
+        $prova = $order->dishes()->pluck('user_id')->toArray();
+
+        //dd($prova);
+
+        if(in_array(Auth::id(), $prova)){
+            return view('admin.orders.show', compact('order'));
         } else{
-        return view('admin.orders.show', compact('order'));
+            return view('auth.error');
         }
     }
 

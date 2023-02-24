@@ -74,9 +74,9 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-         if(Auth::id() !== $dish->user_id){
-             return view('auth.error')->withErrors('You cannot do that');
-         } else{
+        if(Auth::id() !== $dish->user_id){
+            return view('auth.error');
+        } else{
         return view('admin.dishes.show', compact('dish'));
         }
     }
