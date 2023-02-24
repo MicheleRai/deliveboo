@@ -57,7 +57,28 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $search =
+        DB::table("orders")
+            ->join("dish_order", function($join){
+                $join->on("orders.id", "=", "dish_order.order_id");
+            })
+            ->join("dishes", function($join){
+                $join->on("dish_order.dish_id", "=", "dishes.id");
+            })
+            ->join("users", function($join){
+                $join->on("dishes.user_id", "=", "users.id");
+            })
+            ->select("dishes.user_id")
+            ->where("users.id", "=", Auth::user()->id)
+            ->groupBy("users.id")
+            ->get();
+            $prova = $search[0]->user_id;
+        // dd($search[0]->user_id);
+        if(Auth::id() !== $prova){
+            return view('auth.error')->withErrors('You cannot do that');
+        } else{
         return view('admin.orders.show', compact('order'));
+        }
     }
 
     /**
