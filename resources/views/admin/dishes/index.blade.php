@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- @if ($dishes->user_id === Auth::user()->id) --}}
+{{-- (Auth::has('id', $user_id)) --}}
 
 <div class="container row row-cols-3 m-auto">
     @foreach ($dishes as $dish)
@@ -24,4 +26,9 @@
     @endforeach
 
 </div>
+{{-- @else --}}
+    <div class="div">
+        <h1>Non hai accesso a questa sezione!</h1>
+    </div>
+{{-- @endif --}}
 @endsection

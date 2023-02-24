@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -55,5 +56,16 @@ class AdminController extends Controller
         $user->categories()->sync($request['categories']);
 
         return back()->with('message','Profilo Aggiornato');
+    }
+    public function show(User $user)
+    {
+        $categories = DB::table('users')
+            ->select('*')
+            ->join('category_user','users.id','=','category_user.user_id')
+            ->join('categories','category_user.category_id','=','categories.id')
+            ->where('users.id','=',Auth::user()->id)
+            ->get();
+        return view('admin.dashboard', compact('categories'));
+
     }
 }

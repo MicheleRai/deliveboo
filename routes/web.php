@@ -32,6 +32,8 @@ Route::middleware('auth')
     Route::post('/','AdminController@profileUpdate')->name('profileupdate'); //TODO:
     Route::resource('dishes', 'DishController');
     Route::resource('orders', 'OrderController');
+    Route::get('/dashboard', 'AdminController@show')->name('dashboard');
+
 });
 
 

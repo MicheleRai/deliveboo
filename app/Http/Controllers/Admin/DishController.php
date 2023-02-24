@@ -26,10 +26,11 @@ class DishController extends Controller
      */
     public function index()
     {
+        $tab = Dish::all();
         $dishes = Dish::where('user_id', Auth::user()->id)->get();
         // dd($dishes);
 
-        return view('admin.dishes.index', compact('dishes'));
+        return view('admin.dishes.index', compact('dishes', 'tab'));
     }
 
     /**
@@ -73,7 +74,11 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        if(Auth::id() !== $dish->user_id){
+            return view('auth.error')->withErrors('You cannot do that');
+        } else{
         return view('admin.dishes.show', compact('dish'));
+        }
     }
 
     /**
@@ -84,7 +89,11 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        if(Auth::id() !== $dish->user_id){
+            return view('auth.error')->withErrors('You cannot do that');
+        } else{
         return view('admin.dishes.edit', compact('dish'));
+         }
     }
 
     /**
