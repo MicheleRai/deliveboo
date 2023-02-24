@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use App\Order;
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderAuth
 {
@@ -18,7 +20,7 @@ class OrderAuth
     {
         if ($request->route('id')) {
             $orders = Order::find($request->route('id'));
-            if ($orders && $orders->dish_id != auth()->user()->id) {
+
                 return redirect('/');
             }
         }
