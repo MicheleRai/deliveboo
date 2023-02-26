@@ -5072,13 +5072,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      arrCart: []
+      arrCart: [],
+      user: null
     };
   },
   methods: {
     getCart: function getCart(dish) {
-      this.arrCart.push(dish);
-      console.log(this.arrCart);
+      if (this.arrCart.length == 0) {
+        this.arrCart.push(dish);
+        this.user = dish.user_id;
+      } else if (dish.user_id == this.user) {
+        this.arrCart.push(dish);
+      } else {
+        window.alert('Scegliere un piatto dello stesso ristorante');
+      }
     }
   }
 });

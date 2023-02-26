@@ -29,7 +29,7 @@ export default {
         total() {
             return this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0);
         }
-  }
+    }
 }
 </script>
 
