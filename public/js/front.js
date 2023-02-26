@@ -5104,6 +5104,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5111,6 +5112,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     arrCart: Array
+  },
+  computed: {
+    total: function total() {
+      return this.arrCart.reduce(function (acc, item) {
+        return acc + parseFloat(item.price);
+      }, 0);
+    }
   }
 });
 
@@ -11828,18 +11836,22 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.arrCart, function (objCart) {
-      return _c("div", { key: objCart }, [
-        _vm._v(
-          "\n      " +
-            _vm._s(objCart.name) +
-            " - " +
-            _vm._s(objCart.price) +
-            "€\n  "
-        ),
-      ])
-    }),
-    0
+    [
+      _vm._l(_vm.arrCart, function (objCart, index) {
+        return _c("div", { key: index }, [
+          _vm._v(
+            "\n        " +
+              _vm._s(objCart.name) +
+              " - " +
+              _vm._s(objCart.price) +
+              "€\n    "
+          ),
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", [_vm._v("Tot: " + _vm._s(_vm.total.toFixed(2)) + "€")]),
+    ],
+    2
   )
 }
 var staticRenderFns = []
