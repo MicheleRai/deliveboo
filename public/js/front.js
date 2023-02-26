@@ -5264,7 +5264,7 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 vue__WEBPACK_IMPORTED_MODULE_4__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_5__["default"]);
 var routes = [{
   path: '/',
-  name: 'PageHome',
+  name: 'home',
   component: _pages_PageHome__WEBPACK_IMPORTED_MODULE_1__["default"]
 }, {
   path: '/order',
@@ -11881,7 +11881,30 @@ var render = function () {
             attrs: { id: "navbarNavAltMarkup" },
           },
           [
-            _vm._m(1),
+            _c(
+              "div",
+              { staticClass: "navbar-nav" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link active",
+                    attrs: { to: { name: "home" } },
+                  },
+                  [_vm._v("Home")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link active btn btn-primary text-light",
+                    attrs: { href: "/login" },
+                  },
+                  [_vm._v("Sei un ristoratore? Clicca qui")]
+                ),
+              ],
+              1
+            ),
             _vm._v(" "),
             _c(
               "router-link",
@@ -11918,30 +11941,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-nav" }, [
-      _c(
-        "a",
-        {
-          staticClass: "nav-link active",
-          attrs: { "aria-current": "page", href: "/" },
-        },
-        [_vm._v("Home")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "nav-link active btn btn-primary text-light",
-          attrs: { href: "/login" },
-        },
-        [_vm._v("Sei un ristoratore? Clicca qui")]
-      ),
-    ])
   },
 ]
 render._withStripped = true

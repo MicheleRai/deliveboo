@@ -8,7 +8,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <router-link class="nav-link active" :to="{name: 'home' }">Home</router-link>
                     <a href="/login" class="nav-link active btn btn-primary text-light">Sei un ristoratore? Clicca qui</a>
                 </div>
                 <router-link :to="{name: 'order'}" class="btn btn-warning">Ordini</router-link>
