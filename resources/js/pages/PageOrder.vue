@@ -1,10 +1,23 @@
 <template>
-    <div class="grid">
-       <h1>Sono la pagina degli ordini in vue</h1>
+    <div>
+        <cart :arr-cart="arrCart"/>
     </div>
 </template>
 
-<style lang="scss">
-@import '~bootstrap/scss/bootstrap';
+<script>
+import Cart from '../components/Cart.vue';
+
+export default {
+    components: {
+        Cart,
+    },
+
+    props: {
+        arrCart: Array,
+    },
+}
+</script>
+
+<style>
 
 </style>

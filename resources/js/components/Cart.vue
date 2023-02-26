@@ -1,9 +1,10 @@
 <template>
     <div>
         <div v-for="(objCart, index) in arrCart" :key="index">
+            <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
             {{ objCart.name }} - {{ objCart.price }}&euro;
         </div>
-        <div>Tot: {{ total.toFixed(2) }}&euro;</div>
+        <div v-show="total">Tot: {{ total.toFixed(2) }}&euro;</div>
     </div>
 </template>
 
@@ -16,6 +17,12 @@ export default {
 
     props: {
         arrCart: Array,
+    },
+
+    methods: {
+        deleteObj(index){
+            this.arrCart.splice(index, 1);
+        }
     },
 
     computed: {

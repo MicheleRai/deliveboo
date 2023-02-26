@@ -5,7 +5,7 @@
             <cart :arr-cart="arrCart"/>
         </div>
         <main>
-            <router-view @addCart="getCart"></router-view>
+            <router-view @addCart="getCart" :arr-cart="arrCart"></router-view>
         </main>
     </div>
 </template>
