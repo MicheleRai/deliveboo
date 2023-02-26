@@ -5,7 +5,7 @@
            <img :src="dish.image" alt="logo">
            <h3>{{ dish.name }}</h3>
            <p>&euro; {{ dish.price }}</p>
-           <button class="btn btn-success" @click="$emit('addCart', dish.name)"> Aggiungi al carrello</button>
+           <button class="btn btn-success" @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
         </div>
    </div>
 </template>

@@ -11800,19 +11800,7 @@ var render = function () {
       1
     ),
     _vm._v(" "),
-    _c(
-      "main",
-      [
-        _c("router-view", {
-          on: {
-            addCart: function ($event) {
-              return _vm.getCart()
-            },
-          },
-        }),
-      ],
-      1
-    ),
+    _c("main", [_c("router-view", { on: { addCart: _vm.getCart } })], 1),
   ])
 }
 var staticRenderFns = []
@@ -11842,7 +11830,13 @@ var render = function () {
     "div",
     _vm._l(_vm.arrCart, function (objCart) {
       return _c("div", { key: objCart }, [
-        _vm._v("\n      " + _vm._s(objCart) + "\n  "),
+        _vm._v(
+          "\n      " +
+            _vm._s(objCart.name) +
+            " - " +
+            _vm._s(objCart.price) +
+            "€\n  "
+        ),
       ])
     }),
     0
@@ -11992,7 +11986,7 @@ var render = function () {
               staticClass: "btn btn-success",
               on: {
                 click: function ($event) {
-                  return _vm.$emit("addCart", dish.name)
+                  return _vm.$emit("addCart", dish)
                 },
               },
             },

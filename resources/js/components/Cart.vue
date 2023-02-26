@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="objCart in arrCart" :key="objCart">
-        {{ objCart }}
+        {{ objCart.name }} - {{ objCart.price }}&euro;
     </div>
   </div>
 </template>
