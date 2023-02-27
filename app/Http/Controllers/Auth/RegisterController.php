@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Category;
 use App\User;
+use App\Category;
 use App\Traits\Slugger;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Unique;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -63,8 +64,8 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:50'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'logo_image' => ['string'],
-            'cover_image' => ['string'],
+            'logo_image' => ['mimes:jpg,jpeg,png,gif', 'max:1024'],
+            'cover_image' => ['mimes:jpg,jpeg,png,gif', 'max:1024'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -78,14 +79,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+        $logo_path = Storage::put('uploads', $data['logo_image']);
+        $cover_path = Storage::put('uploads', $data['cover_image']);
+
         $user = User::create([
             'slug' => User::getSlug($data['name']),
             'name' => $data['name'],
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
             'email' => $data['email'],
-            'logo_image' => $data['logo_image'],
-            'cover_image' => $data['cover_image'],
+            'logo_image' => $logo_path ?? NULL,
+            'cover_image' => $cover_path ?? NULL,
             'password' => Hash::make($data['password']),
         ]);
 

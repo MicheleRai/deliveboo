@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -89,7 +89,7 @@
                             <label for="logo_image" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="logo_image" type="logo_image" class="form-control @error('logo_image') is-invalid @enderror" name="logo_image" value="{{ old('logo_image') }}" autocomplete="logo_image">
+                                <input id="logo_image" type="file" class="form-control @error('logo_image') is-invalid @enderror" name="logo_image" value="{{ old('logo_image') }}" autocomplete="logo_image">
 
                                 @error('logo_image')
                                     <span class="invalid-feedback" role="alert">
@@ -102,7 +102,7 @@
                             <label for="cover_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine di copertina') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cover_image" type="cover_image" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" value="{{ old('cover_image') }}" autocomplete="cover_image">
+                                <input id="cover_image" type="file" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" value="{{ old('cover_image') }}" autocomplete="cover_image">
 
                                 @error('cover_image')
                                     <span class="invalid-feedback" role="alert">

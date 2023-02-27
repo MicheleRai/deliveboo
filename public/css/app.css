@@ -10819,8 +10819,3 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.sfondo {
-  background-image: url(https://picsum.photos/400/200/?blur);
-  background-repeat: no-repeat;
-  background-size: cover;
-}

@@ -33,7 +33,6 @@ Route::middleware('auth')
     Route::resource('dishes', 'DishController');
     Route::resource('orders', 'OrderController');
     Route::get('/dashboard', 'AdminController@show')->name('dashboard');
-
 });
 
 

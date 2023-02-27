@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -43,17 +44,19 @@ class AdminController extends Controller
             'name' => 'required|string|max:50',
             'address' => 'required|string|max:50',
             'vat_number' => 'required|numeric|digits:11',
-            'logo_image' => 'string',
-            'cover_image' => 'string',
+            'logo_image' => 'file|mimes:jpg,jpeg,png,gif|max:1024',
+            'cover_image' => 'file|mimes:jpg,jpeg,png,gif|max:1024',
         ]);
 
-        // TODO: save changes
+        $logo_path = Storage::put('uploads', $request['logo_image']);
+        $cover_path = Storage::put('uploads', $request['cover_image']);
+
         $user = Auth::user();
         $user->name = $request['name'];
         $user->address = $request['address'];
         $user->vat_number = $request['vat_number'];
-        $user->logo_image = $request['logo_image'];
-        $user->cover_image = $request['cover_image'];
+        $user->logo_image = $logo_path;
+        $user->cover_image = $cover_path;
         $user->slug = User::getSlug($request['name']);
         $user->save();
         $user->categories()->sync($request['categories']);

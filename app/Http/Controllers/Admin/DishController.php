@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -14,7 +15,7 @@ class DishController extends Controller
         'name'        => 'required|max:50|string',
         'price'       => 'required|numeric|between:0.00,9999.99',
         'description' => 'required|string',
-        'image'       => 'url'
+        'image'       => 'file|mimes:jpg,jpeg,png,gif|max:1024',
     ];
 
     // TODO: cambiare il sistema di caricamento delle immagini
@@ -51,15 +52,18 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate($this->validations);
         $data = $request->all();
+
+        $img_path = Storage::put('uploads', $data['image']);
         $dish = new Dish();
         $dish->user_id = Auth::user()->id;
         $dish->name = $data['name'];
         $dish->price = $data['price'];
         $dish->description = $data['description'];
         $dish->visible = $request->has('visible');
-        $dish->image = $data['image'];
+        $dish->image = $img_path;
         $dish->save();
 
         return redirect()->route('admin.dishes.show',
@@ -108,13 +112,14 @@ class DishController extends Controller
         $request->validate($this->validations);
         $data = $request->all();
 
+        $img_path = Storage::put('uploads', $data['image']);
         $dish->user_id = Auth::user()->id;
         $dish->name = $data['name'];
         $dish->price = $data['price'];
         $dish->description = $data['description'];
         $dish->visible = $request->has('visible');
-        $dish->image = $data['image'];
-        $dish->update();
+        $dish->image = $img_path;
+        $dish->save();
 
         return redirect()->route('admin.dishes.show',
         [ 'dish' => $dish ]);

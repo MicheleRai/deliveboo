@@ -35,7 +35,7 @@
                       </div>
                    @endif
                    {{-- TODO: --}}
-                    <form action="{{route('admin.profileupdate')}}" method="POST">
+                    <form action="{{route('admin.profileupdate')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name"><strong>Name:</strong></label>
@@ -51,11 +51,11 @@
                     </div>
                     <div class="form-group">
                         <label for="logo_image"><strong>Logo:</strong></label>
-                        <input type="text" class="form-control" id ="logo_image" value="{{Auth::user()->logo_image}}" name="logo_image">
+                        <input type="file" class="form-control" id ="logo_image" value="{{Auth::user()->logo_image}}" name="logo_image">
                     </div>
                     <div class="form-group">
                         <label for="cover_image"><strong>Immagine di copertina:</strong></label>
-                        <input type="text" class="form-control" id ="cover_image" value="{{Auth::user()->cover_image}}" name="cover_image">
+                        <input type="file" class="form-control" id ="cover_image" value="{{Auth::user()->cover_image}}" name="cover_image">
                     </div>
                     <div id="category" class="col-md-6 position-relative">
                         @foreach ($categories as $category)
