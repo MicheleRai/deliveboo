@@ -5086,6 +5086,9 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         window.alert('Scegliere un piatto dello stesso ristorante');
       }
+    },
+    emptyCart: function emptyCart() {
+      this.arrCart = [];
     }
   }
 });
@@ -5347,6 +5350,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.fields = {}; //Clear input fields.
           _this.loaded = true;
           _this.success = true;
+          _this.$emit('emptyCart');
         })["catch"](function (error) {
           _this.loaded = true;
           if (error.response.status === 422) {
@@ -11953,7 +11957,7 @@ var render = function () {
       [
         _c("router-view", {
           attrs: { "arr-cart": _vm.arrCart },
-          on: { addCart: _vm.getCart },
+          on: { addCart: _vm.getCart, emptyCart: _vm.emptyCart },
         }),
       ],
       1

@@ -79,6 +79,7 @@ export default {
                     this.fields = {}; //Clear input fields.
                     this.loaded = true;
                     this.success = true;
+                    this.$emit('emptyCart');
                 }).catch(error => {
                     this.loaded = true;
                     if (error.response.status === 422) {
@@ -87,6 +88,7 @@ export default {
                 });
             }
         },
+
     },
 
     computed: {
