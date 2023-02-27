@@ -54,7 +54,6 @@ class OrderController extends Controller
         $this->validate($request, [
             'name_user' => 'required|string|max:50',
             'email_user' => 'required|email|max:50',
-            'note' => 'string',
             'address' => 'required|string|max:50',
             'tot_price' => 'required|numeric|between:0.00,9999.99',
         ]);
@@ -65,11 +64,12 @@ class OrderController extends Controller
             'name_user' => $data['name_user'],
             'address' => $data['address'],
             'email_user' => $data['email_user'],
-            'note' => $data['note'],
+            'note' => $data['note'] ?? null,
             'tot_price' => $data['tot_price']
         ]);
 
         // TODO: aggiungere attach della tabella ponte
+        // $user->categories()->sync($request['categories']);
         /*
           Add mail functionality here.
         */

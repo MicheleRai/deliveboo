@@ -27,13 +27,12 @@
             <div class="form-group">
                 <label for="note">Note</label>
                 <textarea class="form-control" name="note" id="note" rows="5" v-model="fields.note"></textarea>
-                <div v-if="errors && errors.note" class="text-danger">{{ errors.note[0] }}</div>
             </div>
 
             <div v-show="total">Totale: {{ total.toFixed(2) }}&euro;
             </div>
 
-            <button type="submit" class="btn btn-primary">Procedi con l'ordine</button>
+            <button type="submit" class="btn btn-primary" :disabled="arrCart.length == 0">Procedi con l'ordine</button>
             <div v-if="success" class="alert alert-success mt-3">
                 Ordine ricevuto!
             </div>
