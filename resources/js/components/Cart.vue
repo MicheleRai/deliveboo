@@ -4,7 +4,9 @@
             <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
             {{ objCart.name }} - {{ objCart.price }}&euro;
         </div>
-        <div v-show="total">Tot: {{ total.toFixed(2) }}&euro;</div>
+        <div v-show="total">Tot: {{ total.toFixed(2) }}&euro;
+        </div>
+        <router-link :to="{name:'order'}"   v-show="total">Vai all'ordine</router-link>
     </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
     methods: {
         deleteObj(index){
             this.arrCart.splice(index, 1);
-        }
+        },
     },
 
     computed: {
@@ -33,6 +35,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

@@ -25,7 +25,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +36,17 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validations);
+        $data = $request->all();
+        $order = new Order();
+        $order->name_user = $data['name_user'];
+        $order->email_user = $data['email_user'];
+        $order->address = $data['address'];
+        $order->tot_price = $data['tot_price'];
+        $order->save();
+
+        return redirect()->route('order',
+        [ 'order' => $order ]);
     }
 
     /**
