@@ -64,8 +64,8 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:50'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'logo_image' => ['image', 'max:1024'],
-            'cover_image' => ['image', 'max:1024'],
+            'logo_image' => ['mimes:jpg,jpeg,png,gif', 'max:1024'],
+            'cover_image' => ['mimes:jpg,jpeg,png,gif', 'max:1024'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -78,14 +78,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // if(request()->hasfile('logo_image')){
-        //     $logo_path = time().'.'.request()->logo_image->getClientOriginalExtension();
-        //     request()->logo_image->move(public_path('uploads'), $logo_path);
-        // }
-        // if(request()->hasfile('cover_image')){
-        //     $cover_path = time().'.'.request()->avatar->getClientOriginalExtension();
-        //     request()->avatar->move(public_path('uploads'), $cover_path);
-        // }
 
         $logo_path = Storage::put('uploads', $data['logo_image']);
         $cover_path = Storage::put('uploads', $data['cover_image']);
