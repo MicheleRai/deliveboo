@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dishes', 'Api\DishController@index')->name('dishes.index');
 Route::get('/dishes/{dish}', 'Api\DishController@show')->name('dishes.show');
 
-Route::post('/order', 'Api\OrderController@create')->name('order.create');
+// Route::post('/order', 'Api\OrderController@create')->name('order.create');
+Route::post('/submit', 'Api\OrderController@submit');
