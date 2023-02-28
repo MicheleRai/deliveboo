@@ -5452,7 +5452,8 @@ var render = function render() {
     }, [_c("img", {
       attrs: {
         src: "storage/" + dish.image,
-        alt: "logo"
+        alt: "image",
+        onerror: "this.src='storage/placeholder.jpeg';"
       }
     }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v("€ " + _vm._s(dish.price))]), _vm._v(" "), _c("button", {
       staticClass: "btn btn-success",
@@ -5496,7 +5497,8 @@ var render = function render() {
     }, [_c("img", {
       attrs: {
         src: "storage/" + user.logo_image,
-        alt: "logo"
+        alt: "logo",
+        onerror: "this.src='storage/placeholder.jpeg';"
       }
     }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(user.address))]), _vm._v(" "), _c("router-link", {
       staticClass: "btn btn-primary",

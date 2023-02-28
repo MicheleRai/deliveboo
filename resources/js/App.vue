@@ -46,7 +46,7 @@ export default {
 
         emptyCart(){
             this.arrCart = [];
-        }
+        },
     },
 }
 

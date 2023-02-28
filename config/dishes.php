@@ -6,7 +6,7 @@ return [
             'description'   => 'La pizza di Andria è più buona',
             'price'         => 6.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 3,
@@ -14,7 +14,7 @@ return [
             'description'   => 'L\'hamburger di Andria è più buono',
             'price'         => 7.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 3,
@@ -22,7 +22,7 @@ return [
             'description'   => 'Il panzerotto è orginale di Andria(Capomulino)',
             'price'         => 1.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 2,
@@ -30,7 +30,7 @@ return [
             'description'   => 'La pizza di Nereto è più buona',
             'price'         => 6.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 2,
@@ -38,7 +38,7 @@ return [
             'description'   => 'L\'hamburger di Nereto è più buono',
             'price'         => 7.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 2,
@@ -46,7 +46,7 @@ return [
             'description'   => 'Il panzerotto è orginale di Nereto(Capomulino)',
             'price'         => 1.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 1,
@@ -54,7 +54,7 @@ return [
             'description'   => 'La pizza di Sassari è più buona',
             'price'         => 6.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 1,
@@ -62,7 +62,7 @@ return [
             'description'   => 'L\'hamburger di Sassari è più buono',
             'price'         => 7.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 1,
@@ -70,7 +70,7 @@ return [
             'description'   => 'Il panzerotto è orginale di Sassari(Capomulino)',
             'price'         => 1.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 4,
@@ -78,7 +78,7 @@ return [
             'description'   => 'La pizza di Firenze è più buona',
             'price'         => 6.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 4,
@@ -86,7 +86,7 @@ return [
             'description'   => 'L\'hamburger di Firenze è più buono',
             'price'         => 7.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 4,
@@ -94,7 +94,7 @@ return [
             'description'   => 'Il panzerotto è orginale di Firenze(Capomulino)',
             'price'         => 1.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 5,
@@ -102,7 +102,7 @@ return [
             'description'   => 'La pizza di Bari è più buona',
             'price'         => 6.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 5,
@@ -110,7 +110,7 @@ return [
             'description'   => 'L\'hamburger di Bari è più buono',
             'price'         => 7.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
         [
             'user_id'       => 5,
@@ -118,6 +118,6 @@ return [
             'description'   => 'Il panzerotto è orginale di Bari(Capomulino)',
             'price'         => 1.50,
             'visible'       => true,
-            'image'         => 'https://picsum.photos/id/' . rand(0, 1000) . '/300/200'
+            'image'         => ''
         ],
     ];
