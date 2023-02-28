@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\BraintreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dishes', 'Api\DishController@index')->name('dishes.index');
 Route::get('/dishes/{dish}', 'Api\DishController@show')->name('dishes.show');
 
-// Route::post('/order', 'Api\OrderController@create')->name('order.create');
+Route::post('/order', 'Api\OrderController@create')->name('order.create');
+
+Route::any('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('auth');
 Route::post('/submit', 'Api\OrderController@submit');
+
