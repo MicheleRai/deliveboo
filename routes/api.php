@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\BraintreeController;
 
 Route::get('/dishes', 'Api\DishController@index')->name('dishes.index');
 Route::get('/dishes/{dish}', 'Api\DishController@show')->name('dishes.show');
+Route::get('/categories/{category}', 'Api\DishController@categories')->name('categories');
 
 Route::any('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('auth');
 Route::post('/submit', 'Api\OrderController@submit');

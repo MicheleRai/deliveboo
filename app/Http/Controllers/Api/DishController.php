@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Category;
 use App\Dish;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -17,10 +18,12 @@ class DishController extends Controller
     public function index()
     {
         $users = User::all();
+        $categories = Category::all();
 
         return response()->json ([
             'success' => true,
             'results' => $users,
+            'categories' => $categories,
         ]);
     }
 
@@ -39,6 +42,18 @@ class DishController extends Controller
         return response()->json ([
             'success' => true,
             'results' => $menu,
+        ]);
+    }
+
+    public function categories($category)
+    {
+        $category = Category::where('slug', $category)->first();
+        $restaurants = $category->users()->get();
+
+        return response()->json ([
+            'success' => true,
+            'results' => $category,
+            'restaurants' => $restaurants,
         ]);
     }
 }

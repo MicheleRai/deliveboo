@@ -9,6 +9,7 @@ import VueRouter from 'vue-router';
 import PageHome from './pages/PageHome';
 import PageOrder from './pages/PageOrder';
 import PageDishes from './pages/PageDishes';
+import PageCategories from './pages/PageCategories';
 
 Vue.use(VueRouter)
 
@@ -30,7 +31,14 @@ const routes = [
         name: 'dishes-user',
         component: PageDishes,
         props:true,
-    }
+    },
+
+    {
+        path: '/categories/:slug',
+        name: 'categories',
+        component: PageCategories,
+        props:true,
+    },
 ]
 
 const router = new VueRouter({
