@@ -51,8 +51,7 @@ export default {
             email_user: null,
             address: null,
             note: null,
-            // TODO: FIXARE VALORE DI tot_price
-            tot_price: 10,
+            tot_price: this.tot_price,
             dishes_id: this.dishes_id,
         },
         errors: {},
@@ -64,6 +63,7 @@ export default {
     props: {
         arrCart: Array,
         dishes_id: Array,
+        tot_price: String,
     },
 
     methods: {

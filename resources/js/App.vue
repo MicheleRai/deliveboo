@@ -2,10 +2,10 @@
     <div>
         <div class="d-flex justify-content-between">
             <navbar />
-            <cart :arr-cart="arrCart" :dishes_id="dishes_id"/>
+            <cart :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price"/>
         </div>
         <main>
-            <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart"></router-view>
+            <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart" :tot_price="tot_price"></router-view>
         </main>
     </div>
 </template>
@@ -26,6 +26,7 @@ export default {
             arrCart: [],
             user: null,
             dishes_id: [],
+            tot_price: null,
         }
     },
 
@@ -48,6 +49,12 @@ export default {
             this.arrCart = [];
         }
     },
+
+    computed: {
+        total() {
+            return this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
+        }
+    }
 }
 
 </script>
