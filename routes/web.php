@@ -35,4 +35,6 @@ Route::middleware('auth')
     Route::get('/dashboard', 'AdminController@show')->name('dashboard');
 });
 
+// Route::any('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('auth');
+
 
