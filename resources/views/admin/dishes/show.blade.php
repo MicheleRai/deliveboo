@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2>{{ $dish->name }}</h2>
-        <img src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
+        <img src="{{ asset($dish->image ? 'storage/' . $dish->image : 'storage/placeholder.jpeg') }}" alt="{{ $dish->name }}">
         <p>{{ $dish->price }}</p>
         <p>{{ $dish->description }}</p>
     </div>

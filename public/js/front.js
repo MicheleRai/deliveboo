@@ -12197,7 +12197,11 @@ var render = function () {
           { key: restaurant.id, staticClass: "card" },
           [
             _c("img", {
-              attrs: { src: "storage/" + restaurant.logo_image, alt: "logo" },
+              attrs: {
+                src: "storage/" + restaurant.logo_image,
+                alt: "logo",
+                onerror: "this.src='storage/placeholder.jpeg';",
+              },
             }),
             _vm._v(" "),
             _c("h3", [_vm._v(_vm._s(restaurant.name))]),
@@ -12256,7 +12260,13 @@ var render = function () {
       _vm._v(" "),
       _vm._l(_vm.arrDishes.dishes, function (dish) {
         return _c("div", { key: dish.id }, [
-          _c("img", { attrs: { src: "storage/" + dish.image, alt: "logo" } }),
+          _c("img", {
+            attrs: {
+              src: "storage/" + dish.image,
+              alt: "image",
+              onerror: "this.src='storage/placeholder.jpeg';",
+            },
+          }),
           _vm._v(" "),
           _c("h3", [_vm._v(_vm._s(dish.name))]),
           _vm._v(" "),
@@ -12316,11 +12326,9 @@ var render = function () {
           [
             _c("img", {
               attrs: {
-                src:
-                  user.image == ""
-                    ? "../../../storage/app/public/placeholder.jpeg"
-                    : "storage/" + user.logo_image,
+                src: "storage/" + user.logo_image,
                 alt: "logo",
+                onerror: "this.src='storage/placeholder.jpeg';",
               },
             }),
             _vm._v(" "),

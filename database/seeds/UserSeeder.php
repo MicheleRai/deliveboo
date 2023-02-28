@@ -21,8 +21,8 @@ class UserSeeder extends Seeder
                 'address' => 'Via Mazzini, 24 - Alba Adriatica (TE)',
                 'vat_number' => '01234567890',
                 'slug' => 'da-davide',
-                'logo_image' => 'https://picsum.photos/200',
-                'cover_image' => 'https://picsum.photos/200/300',
+                'logo_image' => '',
+                'cover_image' => '',
             ],
             [
                 'email' => 'daluigi@gmail.com',
@@ -31,8 +31,8 @@ class UserSeeder extends Seeder
                 'address' => 'Via Silone, 56 - Nereto (TE)',
                 'vat_number' => '01234567891',
                 'slug' => 'da-luigi',
-                'logo_image' => 'https://picsum.photos/200',
-                'cover_image' => 'https://picsum.photos/200/300',
+                'logo_image' => '',
+                'cover_image' => '',
             ],
             [
                 'email' => 'daandrea@gmail.com',
@@ -41,8 +41,8 @@ class UserSeeder extends Seeder
                 'address' => 'Viale Virgilio, 3 - Andria (BT)',
                 'vat_number' => '01234567892',
                 'slug' => 'da-andrea',
-                'logo_image' => 'https://picsum.photos/200',
-                'cover_image' => 'https://picsum.photos/200/300',
+                'logo_image' => '',
+                'cover_image' => '',
             ],
             [
                 'email' => 'dakenta@gmail.com',
@@ -51,8 +51,8 @@ class UserSeeder extends Seeder
                 'address' => 'Piazza San Marco, 35 - Firenze (FI)',
                 'vat_number' => '01234567893',
                 'slug' => 'da-kenta',
-                'logo_image' => 'https://picsum.photos/200',
-                'cover_image' => 'https://picsum.photos/200/300',
+                'logo_image' => '',
+                'cover_image' => '',
             ],
             [
                 'email' => 'damichele@gmail.com',
@@ -61,8 +61,8 @@ class UserSeeder extends Seeder
                 'address' => 'Viale Le Noci, 18 - Bari (BA)',
                 'vat_number' => '01234567894',
                 'slug' => 'da-michele',
-                'logo_image' => 'https://picsum.photos/200',
-                'cover_image' => 'https://picsum.photos/200/300',
+                'logo_image' => '',
+                'cover_image' => '',
             ],
         ];
 
