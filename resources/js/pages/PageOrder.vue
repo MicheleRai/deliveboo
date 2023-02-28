@@ -1,26 +1,41 @@
 <template>
-    <div class="">
-        <div v-for="(objCart, index) in arrCart" :key="index" class="card col-5 m-auto">
-            <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
+    <div class="container">
+        <div v-for="(objCart, index) in arrCart" :key="index" class="col-5 m-auto">
+            <button class="btn btn-danger col-1" @click="deleteObj(index)">X</button>
             {{ objCart.name }} - {{ objCart.price }}&euro;
         </div>
-        <div v-show="total">Tot: {{ total.toFixed(2) }}&euro;</div>
-        <form id="app" action="" method="post" class="card col-5 m-auto">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email">
 
-            <label for="name">Nome e Cognome</label>
-            <input type="text" name="name" id="name">
+        <form @submit.prevent="submit">
+            <div class="form-group">
+                <label for="name_user">Nome e cognome</label>
+                <input type="text" class="form-control" name="name_user" id="name_user" v-model="fields.name_user"/>
+                <div v-if="errors && errors.name_user" class="text-danger">{{ errors.name_user[0] }}</div>
+            </div>
 
-            <label for="address">Indirizzo</label>
-            <input type="text" name="address" id="address">
+            <div class="form-group">
+                <label for="email_user">E-mail</label>
+                <input type="email" class="form-control" name="email_user" id="email_user" v-model="fields.email_user"/>
+                <div v-if="errors && errors.email_user" class="text-danger">{{ errors.email_user[0] }}</div>
+            </div>
 
-            <label for="note">Note</label>
-            <textarea name="note" id="note"></textarea>
+            <div class="form-group">
+                <label for="address">Indirizzo</label>
+                <input type="email" class="form-control" name="address" id="address" v-model="fields.address"/>
+                <div v-if="errors && errors.address" class="text-danger">{{ errors.address[0] }}</div>
+            </div>
 
-            <label for="price">Totale in &euro;</label>
-            <input type="number" name="price" id="price" :placeholder="total.toFixed(2)" disabled>
-            <input type="submit" value="submit">
+            <div class="form-group">
+                <label for="note">Note</label>
+                <textarea class="form-control" name="note" id="note" rows="5" v-model="fields.note"></textarea>
+            </div>
+
+            <div v-show="total">Totale: {{ total.toFixed(2) }}&euro;
+            </div>
+
+            <button type="submit" class="btn btn-primary" :disabled="arrCart.length == 0">Procedi con l'ordine</button>
+            <div v-if="success" class="alert alert-success mt-3">
+                Ordine ricevuto!
+            </div>
         </form>
     </div>
 </template>
@@ -31,16 +46,49 @@
 export default {
     data(){
        return {
-
-    }
+        fields: {
+            name_user: null,
+            email_user: null,
+            address: null,
+            note: null,
+            // TODO: FIXARE VALORE DI tot_price
+            tot_price: 10,
+        },
+        errors: {},
+        success: false,
+        loaded: true,
+        }
     },
+
     props: {
         arrCart: Array,
     },
+
     methods: {
+
         deleteObj(index){
             this.arrCart.splice(index, 1);
         },
+
+        submit() {
+            if (this.loaded) {
+                this.loaded = false;
+                this.success = false;
+                this.errors = {};
+                axios.post('/api/submit', this.fields).then(response => {
+                    this.fields = {}; //Clear input fields.
+                    this.loaded = true;
+                    this.success = true;
+                    this.$emit('emptyCart');
+                }).catch(error => {
+                    this.loaded = true;
+                    if (error.response.status === 422) {
+                        this.errors = error.response.data.errors || {};
+                    }
+                });
+            }
+        },
+
     },
 
     computed: {

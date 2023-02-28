@@ -21,3 +21,5 @@ Route::get('/dishes/{dish}', 'Api\DishController@show')->name('dishes.show');
 Route::post('/order', 'Api\OrderController@create')->name('order.create');
 
 Route::any('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('auth');
+Route::post('/submit', 'Api\OrderController@submit');
+

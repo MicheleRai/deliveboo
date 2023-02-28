@@ -36,7 +36,6 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->validations);
         $data = $request->all();
         $order = new Order();
         $order->name_user = $data['name_user'];
@@ -45,52 +44,37 @@ class OrderController extends Controller
         $order->tot_price = $data['tot_price'];
         $order->save();
 
+        //TODO: fare attach in dish_order
+
         return redirect()->route('order',
         [ 'order' => $order ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
+    public function submit(Request $request) {
+        $this->validate($request, [
+            'name_user' => 'required|string|max:50',
+            'email_user' => 'required|email|max:50',
+            'address' => 'required|string|max:50',
+            'tot_price' => 'required|numeric|between:0.00,9999.99',
+        ]);
+
+        $data = $request->all();
+
+        $order = Order::create([
+            'name_user' => $data['name_user'],
+            'address' => $data['address'],
+            'email_user' => $data['email_user'],
+            'note' => $data['note'] ?? null,
+            'tot_price' => $data['tot_price']
+        ]);
+
+        // TODO: aggiungere attach della tabella ponte
+        // $user->categories()->sync($request['categories']);
+        /*
+          Add mail functionality here.
+        */
+
+        return response()->json($order, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
-    }
 }

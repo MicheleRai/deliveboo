@@ -5,7 +5,7 @@
             <cart :arr-cart="arrCart"/>
         </div>
         <main>
-            <router-view @addCart="getCart" :arr-cart="arrCart"></router-view>
+            <router-view @addCart="getCart" :arr-cart="arrCart" @emptyCart="emptyCart"></router-view>
         </main>
     </div>
 </template>
@@ -39,6 +39,10 @@ export default {
                 window.alert('Scegliere un piatto dello stesso ristorante')
             }
 
+        },
+
+        emptyCart(){
+            this.arrCart = [];
         }
     },
 }

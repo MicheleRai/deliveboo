@@ -96,9 +96,6 @@
                                     <a class="dropdown-item" href="{{ route('admin.orders.index') }}">
                                       Indice ordini
                                     </a>
-                                    {{-- <a class="dropdown-item" href="{{ route('admin.dishes.create') }}">
-                                      Aggiungi nuovo piatto
-                                    </a> --}}
                                 </div>
                             </li>
                         @endguest
