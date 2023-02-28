@@ -2,7 +2,7 @@
     <div class="container">
       <h1>Sono la pagina dei piatti specifici in vue</h1>
         <div v-for="dish in arrDishes.dishes" :key="dish.id">
-           <img :src="dish.image" alt="logo">
+           <img :src="'storage/' + dish.image" alt="logo">
            <h3>{{ dish.name }}</h3>
            <p>&euro; {{ dish.price }}</p>
            <button class="btn btn-success" @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
