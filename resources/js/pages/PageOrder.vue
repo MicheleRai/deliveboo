@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <label for="address">Indirizzo</label>
-                <input type="email" class="form-control" name="address" id="address" v-model="fields.address"/>
+                <input type="text" class="form-control" name="address" id="address" v-model="fields.address"/>
                 <div v-if="errors && errors.address" class="text-danger">{{ errors.address[0] }}</div>
             </div>
 
@@ -53,6 +53,7 @@ export default {
             note: null,
             // TODO: FIXARE VALORE DI tot_price
             tot_price: 10,
+            dishes_id: this.dishes_id,
         },
         errors: {},
         success: false,
@@ -62,12 +63,14 @@ export default {
 
     props: {
         arrCart: Array,
+        dishes_id: Array,
     },
 
     methods: {
 
         deleteObj(index){
             this.arrCart.splice(index, 1);
+            this.dishes_id.splice(index, 1);
         },
 
         submit() {

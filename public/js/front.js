@@ -5073,7 +5073,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       arrCart: [],
-      user: null
+      user: null,
+      dishes_id: []
     };
   },
   methods: {
@@ -5081,8 +5082,10 @@ __webpack_require__.r(__webpack_exports__);
       if (this.arrCart.length == 0) {
         this.arrCart.push(dish);
         this.user = dish.user_id;
+        this.dishes_id.push(dish.id);
       } else if (dish.user_id == this.user) {
         this.arrCart.push(dish);
+        this.dishes_id.push(dish.id);
       } else {
         window.alert('Scegliere un piatto dello stesso ristorante');
       }
@@ -5124,11 +5127,13 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   props: {
-    arrCart: Array
+    arrCart: Array,
+    dishes_id: Number
   },
   methods: {
     deleteObj: function deleteObj(index) {
       this.arrCart.splice(index, 1);
+      this.dishes_id.splice(index, 1);
     }
   },
   computed: {
@@ -5326,7 +5331,8 @@ __webpack_require__.r(__webpack_exports__);
         address: null,
         note: null,
         // TODO: FIXARE VALORE DI tot_price
-        tot_price: 10
+        tot_price: 10,
+        dishes_id: this.dishes_id
       },
       errors: {},
       success: false,
@@ -5334,11 +5340,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    arrCart: Array
+    arrCart: Array,
+    dishes_id: Array
   },
   methods: {
     deleteObj: function deleteObj(index) {
       this.arrCart.splice(index, 1);
+      this.dishes_id.splice(index, 1);
     },
     submit: function submit() {
       var _this = this;
@@ -11947,7 +11955,9 @@ var render = function () {
       [
         _c("navbar"),
         _vm._v(" "),
-        _c("cart", { attrs: { "arr-cart": _vm.arrCart } }),
+        _c("cart", {
+          attrs: { "arr-cart": _vm.arrCart, dishes_id: _vm.dishes_id },
+        }),
       ],
       1
     ),
@@ -11956,7 +11966,7 @@ var render = function () {
       "main",
       [
         _c("router-view", {
-          attrs: { "arr-cart": _vm.arrCart },
+          attrs: { "arr-cart": _vm.arrCart, dishes_id: _vm.dishes_id },
           on: { addCart: _vm.getCart, emptyCart: _vm.emptyCart },
         }),
       ],
@@ -12402,7 +12412,7 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { type: "email", name: "address", id: "address" },
+              attrs: { type: "text", name: "address", id: "address" },
               domProps: { value: _vm.fields.address },
               on: {
                 input: function ($event) {

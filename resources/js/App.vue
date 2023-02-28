@@ -2,10 +2,10 @@
     <div>
         <div class="d-flex justify-content-between">
             <navbar />
-            <cart :arr-cart="arrCart"/>
+            <cart :arr-cart="arrCart" :dishes_id="dishes_id"/>
         </div>
         <main>
-            <router-view @addCart="getCart" :arr-cart="arrCart" @emptyCart="emptyCart"></router-view>
+            <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart"></router-view>
         </main>
     </div>
 </template>
@@ -25,6 +25,7 @@ export default {
         return {
             arrCart: [],
             user: null,
+            dishes_id: [],
         }
     },
 
@@ -33,8 +34,10 @@ export default {
             if(this.arrCart.length == 0){
                 this.arrCart.push(dish);
                 this.user = dish.user_id;
+                this.dishes_id.push(dish.id);
             } else if (dish.user_id == this.user) {
                 this.arrCart.push(dish);
+                this.dishes_id.push(dish.id);
             } else {
                 window.alert('Scegliere un piatto dello stesso ristorante')
             }

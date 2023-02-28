@@ -19,11 +19,13 @@ export default {
 
     props: {
         arrCart: Array,
+        dishes_id: Number,
     },
 
     methods: {
         deleteObj(index){
             this.arrCart.splice(index, 1);
+            this.dishes_id.splice(index, 1);
         },
     },
 

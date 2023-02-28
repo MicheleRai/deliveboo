@@ -36,18 +36,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $order = new Order();
-        $order->name_user = $data['name_user'];
-        $order->email_user = $data['email_user'];
-        $order->address = $data['address'];
-        $order->tot_price = $data['tot_price'];
-        $order->save();
 
-        //TODO: fare attach in dish_order
-
-        return redirect()->route('order',
-        [ 'order' => $order ]);
     }
 
     public function submit(Request $request) {
@@ -69,7 +58,7 @@ class OrderController extends Controller
         ]);
 
         // TODO: aggiungere attach della tabella ponte
-        // $user->categories()->sync($request['categories']);
+        $order->dishes()->attach($request['dishes_id']);
         /*
           Add mail functionality here.
         */
