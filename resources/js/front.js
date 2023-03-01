@@ -10,6 +10,7 @@ import PageHome from './pages/PageHome';
 import PageOrder from './pages/PageOrder';
 import PageDishes from './pages/PageDishes';
 import PageCategories from './pages/PageCategories';
+import PageRestaurants from './pages/PageRestaurants';
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,14 @@ const routes = [
         component: PageCategories,
         props:true,
     },
+
+    {
+        path: '/restaurants',
+        name: 'restaurants',
+        component: PageRestaurants,
+        props:true,
+    },
+
 ]
 
 const router = new VueRouter({
