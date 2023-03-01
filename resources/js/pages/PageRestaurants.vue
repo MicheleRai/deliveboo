@@ -1,6 +1,6 @@
 <template>
     <div class="grid">
-        <h1>PageRestaurants in vue</h1>
+        <h1>PageRestaurants in vue 2</h1>
        <div class="row row-cols-3 col-10 m-auto">
            <div v-for="user in arrUsers" :key="user.id" class="card">
                 <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
