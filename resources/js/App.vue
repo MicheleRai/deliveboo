@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-5">
             <navbar />
             <cart :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price"/>
         </div>
@@ -60,5 +60,6 @@ export default {
 </script>
 <style lang="scss">
 @import '~bootstrap/scss/bootstrap';
+@import '../sass/app.scss';
 
 </style>

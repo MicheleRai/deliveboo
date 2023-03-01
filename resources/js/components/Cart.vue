@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="fixed-top mt-4 me-0">
         <div v-for="(objCart, index) in arrCart" :key="index">
             <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
             {{ objCart.name }} - {{ objCart.price }}&euro;

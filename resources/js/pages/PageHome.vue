@@ -1,6 +1,7 @@
 <template>
     <div class="grid">
-        <h1>Sono la home in vue</h1>
+        <div class="copertina mb-5"></div>
+        <h1 class="text-center mb-5">Scopri tutti i ristoranti</h1>
        <div class="row row-cols-3 col-10 m-auto">
            <div v-for="user in arrUsers" :key="user.id" class="card">
                 <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
@@ -34,5 +35,7 @@
     }
 </script>
 <style lang="scss">
-
+    .copertina{
+        background-image: url(https://www.ucsf.edu/sites/default/files/styles/article_feature_banner__image/public/2019-09/vegetables-cooking-food-banner-size.jpg);
+    }
 </style>

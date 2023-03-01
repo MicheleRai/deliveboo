@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" :class="{ 'onScroll': !view.topOfPage}">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Deliveboo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +23,37 @@
 <script>
 export default {
 
+    data () {
+    return {
+      view: {
+        topOfPage: true
+      }
+    }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll(){
+      if(window.pageYOffset>0){
+        if(this.view.topOfPage) this.view.topOfPage = false
+      } else {
+        if(!this.view.topOfPage) this.view.topOfPage = true
+      }
+    }
+  },
 }
+
+
 </script>
 
 <style>
-
+nav{
+    transition: all 0.5s ease-in-out;
+}
+.onScroll {
+  background-color: rgb(0, 195, 255);
+  box-shadow: 0 3px 10px (0, 0, 0, 0.15);
+  color: white;
+}
 </style>
