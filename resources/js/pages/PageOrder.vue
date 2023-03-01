@@ -37,13 +37,20 @@
                 Ordine ricevuto!
             </div>
         </form>
+        <payment/>
     </div>
 </template>
 
 <script>
+import Payment from '../components/Payment.vue';
 
 
 export default {
+
+    components: {
+        Payment,
+    },
+
     data(){
        return {
         fields: {

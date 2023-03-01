@@ -10,8 +10,11 @@ import PageHome from './pages/PageHome';
 import PageOrder from './pages/PageOrder';
 import PageDishes from './pages/PageDishes';
 import PageCategories from './pages/PageCategories';
+import vueBraintree from 'vue-braintree';
 
-Vue.use(VueRouter)
+Vue.use(vueBraintree);
+Vue.use(VueRouter);
+
 
 const routes = [
     {
