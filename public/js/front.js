@@ -5702,6 +5702,21 @@ var render = function render() {
   }), _vm._v(" "), _c("h1", {
     staticClass: "text-center mb-5"
   }, [_vm._v("Scopri tutti i ristoranti")]), _vm._v(" "), _c("div", {
+    staticClass: "row text-center m-auto col-10"
+  }, _vm._l(_vm.arrCategories, function (categories) {
+    return _c("router-link", {
+      key: categories.id,
+      staticClass: "btn btn-success col-1",
+      attrs: {
+        to: {
+          name: "categories",
+          params: {
+            slug: categories.slug
+          }
+        }
+      }
+    }, [_vm._v(_vm._s(categories.name))]);
+  }), 1), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-3 col-10 m-auto"
   }, _vm._l(_vm.arrUsers, function (user) {
     return _c("div", {
@@ -5724,22 +5739,7 @@ var render = function render() {
         }
       }
     }, [_vm._v("Scopri di più")])], 1);
-  }), 0), _vm._v(" "), _c("div", {
-    staticClass: "row"
-  }, _vm._l(_vm.arrCategories, function (categories) {
-    return _c("router-link", {
-      key: categories.id,
-      staticClass: "btn btn-success col-1",
-      attrs: {
-        to: {
-          name: "categories",
-          params: {
-            slug: categories.slug
-          }
-        }
-      }
-    }, [_vm._v(_vm._s(categories.name))]);
-  }), 1)]);
+  }), 0)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -5942,6 +5942,21 @@ var render = function render() {
   return _c("div", {
     staticClass: "grid"
   }, [_c("h1", [_vm._v("Ristoranti in vue")]), _vm._v(" "), _c("div", {
+    staticClass: "row text-center m-auto col-10"
+  }, _vm._l(_vm.arrCategories, function (categories) {
+    return _c("router-link", {
+      key: categories.id,
+      staticClass: "btn btn-success col-1",
+      attrs: {
+        to: {
+          name: "categories",
+          params: {
+            slug: categories.slug
+          }
+        }
+      }
+    }, [_vm._v(_vm._s(categories.name))]);
+  }), 1), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-3 col-10 m-auto"
   }, _vm._l(_vm.arrUsers, function (user) {
     return _c("div", {
@@ -5964,22 +5979,7 @@ var render = function render() {
         }
       }
     }, [_vm._v("Scopri di più")])], 1);
-  }), 0), _vm._v(" "), _c("div", {
-    staticClass: "row"
-  }, _vm._l(_vm.arrCategories, function (categories) {
-    return _c("router-link", {
-      key: categories.id,
-      staticClass: "btn btn-success col-1",
-      attrs: {
-        to: {
-          name: "categories",
-          params: {
-            slug: categories.slug
-          }
-        }
-      }
-    }, [_vm._v(_vm._s(categories.name))]);
-  }), 1)]);
+  }), 0)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
