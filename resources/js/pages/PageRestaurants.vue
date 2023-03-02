@@ -28,7 +28,7 @@
                     <h1 class="py-5">Cosa preferisci?</h1>
                     <div class="cards d-flex flex-wrap">
                         <div class="rounded-4 mb-4 me-4 mycard" style="width: 15rem; height: 22rem;"
-                            v-for="user in arrUsers" :key="user.id"></div>
+                            v-for="user in arrUsers" :key="user.id">
                         <!-- singola card -->
                         <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
                             class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
@@ -39,6 +39,7 @@
                         </div>
                         <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
                             class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
+                        </div>
                     </div>
                 </div>
             </div>
