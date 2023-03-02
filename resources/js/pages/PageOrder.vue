@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container sezmain">
         <div v-for="(objCart, index) in arrCart" :key="index" class="col-5 m-auto">
             <button class="btn btn-danger col-1" @click="deleteObj(index)">X</button>
             {{ objCart.name }} - {{ objCart.price }}&euro;
