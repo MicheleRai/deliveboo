@@ -10819,3 +10819,27 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.copertina {
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mycard {
+  position: relative;
+  border: 2px solid #3fa9f5;
+  font-size: 0.8rem;
+  line-height: 20px;
+}
+.mycard .mycard-button {
+  background-color: #3fa9f5;
+  position: absolute;
+  bottom: -5px;
+  left: 2.8rem;
+  margin: auto;
+  font-size: 0.8rem;
+  box-shadow: 3px 3px 5px black;
+  text-decoration: none;
+  padding: 0.4rem;
+}
