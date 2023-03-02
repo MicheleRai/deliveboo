@@ -1,7 +1,7 @@
 <template>
     <div class="grid">
         <div class="copertina mb-5"></div>
-        <h1 class="text-center mb-5">Scopri tutti i ristoranti </h1>
+        <h1 class="text-center mb-5">Scopri tutti i ristoranti boh </h1>
         <div class="row text-center m-auto col-10">
         <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
        </div>
