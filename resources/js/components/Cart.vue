@@ -6,7 +6,7 @@
         </div>
         <div v-show="tot_price">Totale: {{ tot_price }}&euro;
         </div>
-        <router-link :to="{name:'order'}" v-show="tot_price">Vai all'ordine</router-link>
+        <router-link v-show="tot_price" :to="{name:'order'}" >Vai all'ordine</router-link>
     </div>
 </template>
 
@@ -14,6 +14,7 @@
 export default {
     data(){
         return {
+
         }
     },
 
@@ -29,6 +30,7 @@ export default {
             this.dishes_id.splice(index, 1);
         },
     },
+
 }
 </script>
 

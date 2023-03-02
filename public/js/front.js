@@ -5402,7 +5402,6 @@ var render = function render() {
   return _c("div", [_c("div", {
     staticClass: "d-flex justify-content-between"
   }, [_c("navbar"), _vm._v(" "), _c("cart", {
-    staticClass: "fixed-top pt-4",
     attrs: {
       "arr-cart": _vm.arrCart,
       dishes_id: _vm.dishes_id,
@@ -5495,7 +5494,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("nav", {
-    staticClass: "navbar navbar-expand-lg bg-body-tertiary fixed-top",
+    staticClass: "navbar navbar-expand-lg bg-body-tertiary",
     "class": {
       onScroll: !_vm.view.topOfPage
     }
@@ -6033,7 +6032,8 @@ var routes = [{
 }, {
   path: '/order',
   name: 'order',
-  component: _pages_PageOrder__WEBPACK_IMPORTED_MODULE_2__["default"]
+  component: _pages_PageOrder__WEBPACK_IMPORTED_MODULE_2__["default"],
+  props: true
 }, {
   path: '/dishes/:slug',
   name: 'dishes-user',
