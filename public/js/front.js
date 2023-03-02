@@ -5071,24 +5071,34 @@ __webpack_require__.r(__webpack_exports__);
         this.arrCart.push(dish);
         this.user = dish.user_id;
         this.dishes_id.push(dish.id);
+        this.tot_price = this.arrCart.reduce(function (acc, item) {
+          return acc + parseFloat(item.price);
+        }, 0).toFixed(2);
       } else if (dish.user_id == this.user) {
         this.arrCart.push(dish);
         this.dishes_id.push(dish.id);
+        this.tot_price = this.arrCart.reduce(function (acc, item) {
+          return acc + parseFloat(item.price);
+        }, 0).toFixed(2);
       } else {
         window.alert('Scegliere un piatto dello stesso ristorante');
       }
     },
     emptyCart: function emptyCart() {
       this.arrCart = [];
-    }
-  },
-  computed: {
-    total: function total() {
-      return this.tot_price = this.arrCart.reduce(function (acc, item) {
+    },
+    removePrice: function removePrice() {
+      this.tot_price = this.arrCart.reduce(function (acc, item) {
         return acc + parseFloat(item.price);
       }, 0).toFixed(2);
     }
   }
+
+  // computed: {
+  //     total() {
+  //         return this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
+  //     }
+  // }
 });
 
 /***/ }),
@@ -5117,6 +5127,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteObj: function deleteObj(index) {
       this.arrCart.splice(index, 1);
       this.dishes_id.splice(index, 1);
+      this.$emit('removePrice');
     }
   }
 });
@@ -5286,6 +5297,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteObj: function deleteObj(index) {
       this.arrCart.splice(index, 1);
       this.dishes_id.splice(index, 1);
+      this.$emit('removePrice');
     },
     submit: function submit() {
       var _this = this;
@@ -5307,13 +5319,11 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
-  computed: {
-    total: function total() {
-      return this.arrCart.reduce(function (acc, item) {
-        return acc + parseFloat(item.price);
-      }, 0);
-    }
-  },
+  // computed: {
+  //     total() {
+  //         return this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0);
+  //     }
+  // },
   mounted: function mounted() {
     var _this2 = this;
     axios.get("/payment/checkout").then(function (response) {
@@ -5406,6 +5416,9 @@ var render = function render() {
       "arr-cart": _vm.arrCart,
       dishes_id: _vm.dishes_id,
       tot_price: _vm.tot_price
+    },
+    on: {
+      removePrice: _vm.removePrice
     }
   })], 1), _vm._v(" "), _c("main", [_c("router-view", {
     attrs: {
@@ -5415,7 +5428,8 @@ var render = function render() {
     },
     on: {
       addCart: _vm.getCart,
-      emptyCart: _vm.emptyCart
+      emptyCart: _vm.emptyCart,
+      removePrice: _vm.removePrice
     }
   })], 1)]);
 };
@@ -5878,10 +5892,10 @@ var render = function render() {
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: _vm.total,
-      expression: "total"
+      value: _vm.tot_price,
+      expression: "tot_price"
     }]
-  }, [_vm._v("Totale: " + _vm._s(_vm.total.toFixed(2)) + "€\n        ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Totale: " + _vm._s(_vm.tot_price) + "€\n        ")]), _vm._v(" "), _c("div", {
     attrs: {
       id: "bt-dropin"
     }
