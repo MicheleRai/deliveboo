@@ -5634,24 +5634,47 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("h1", [_vm._v("Sono la pagina dei piatti specifici in vue")]), _vm._v(" "), _vm._l(_vm.arrDishes.dishes, function (dish) {
+  }, [_c("div", {}), _vm._v(" "), _c("div", [_c("img", {
+    attrs: {
+      src: "storage/" + _vm.user.logo_image,
+      alt: "logo",
+      onerror: "this.src='storage/placeholder.jpeg';"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "cards d-flex flex-wrap"
+  }, _vm._l(_vm.arrDishes.dishes, function (dish) {
     return _c("div", {
-      key: dish.id
+      key: dish.id,
+      staticClass: "rounded-4 mb-4 me-4 mycard",
+      staticStyle: {
+        width: "15rem",
+        height: "22rem"
+      }
     }, [_c("img", {
+      staticClass: "rounded-4",
+      staticStyle: {
+        width: "102%",
+        height: "50%",
+        position: "relative",
+        left: "-2px",
+        top: "-2px"
+      },
       attrs: {
         src: "storage/" + dish.image,
         alt: "image",
         onerror: "this.src='storage/placeholder.jpeg';"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v("€ " + _vm._s(dish.price))]), _vm._v(" "), _c("button", {
-      staticClass: "btn btn-success",
+    }), _vm._v(" "), _c("h4", {
+      staticClass: "tetx-center mt-2"
+    }, [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("h5", [_vm._v("€ " + _vm._s(dish.price))]), _vm._v(" "), _c("button", {
+      staticClass: "m-3 rounded-5 text-white px-4 mycard-button",
       on: {
         click: function click($event) {
           return _vm.$emit("addCart", dish);
         }
       }
     }, [_vm._v(" Aggiungi al carrello")])]);
-  })], 2);
+  }), 0)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -5952,7 +5975,7 @@ var render = function render() {
     staticClass: "py-5"
   }, [_vm._v("Cosa preferisci?")]), _vm._v(" "), _c("div", {
     staticClass: "cards d-flex flex-wrap"
-  }, [_vm._l(_vm.arrUsers, function (user) {
+  }, _vm._l(_vm.arrUsers, function (user) {
     return _c("div", {
       key: user.id,
       staticClass: "rounded-4 mb-4 me-4 mycard",
@@ -5960,40 +5983,40 @@ var render = function render() {
         width: "15rem",
         height: "22rem"
       }
-    });
-  }), _vm._v(" "), _c("img", {
-    staticClass: "rounded-4",
-    staticStyle: {
-      width: "102%",
-      height: "50%",
-      position: "relative",
-      left: "-2px",
-      top: "-2px"
-    },
-    attrs: {
-      src: "storage/" + _vm.user.logo_image,
-      alt: "logo",
-      onerror: "this.src='storage/placeholder.jpeg';"
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "mx-4"
-  }, [_c("h4", {
-    staticClass: "tetx-center"
-  }, [_vm._v(_vm._s(_vm.user.name))]), _vm._v(" "), _c("div", {
-    staticClass: "my-3"
-  }, [_vm._v(_vm._s(_vm.user.address))]), _vm._v(" "), _c("div", {
-    staticClass: "my-3"
-  }, [_vm._v("080 219 7961")])]), _vm._v(" "), _c("router-link", {
-    staticClass: "m-3 rounded-5 text-white px-4 mycard-button",
-    attrs: {
-      to: {
-        name: "dishes-user",
-        params: {
-          slug: _vm.user.slug
+    }, [_c("img", {
+      staticClass: "rounded-4",
+      staticStyle: {
+        width: "102%",
+        height: "50%",
+        position: "relative",
+        left: "-2px",
+        top: "-2px"
+      },
+      attrs: {
+        src: "storage/" + user.logo_image,
+        alt: "logo",
+        onerror: "this.src='storage/placeholder.jpeg';"
+      }
+    }), _vm._v(" "), _c("div", {
+      staticClass: "mx-4"
+    }, [_c("h4", {
+      staticClass: "tetx-center"
+    }, [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c("div", {
+      staticClass: "my-3"
+    }, [_vm._v(_vm._s(user.address))]), _vm._v(" "), _c("div", {
+      staticClass: "my-3"
+    }, [_vm._v("080 219 7961")])]), _vm._v(" "), _c("router-link", {
+      staticClass: "m-3 rounded-5 text-white px-4 mycard-button",
+      attrs: {
+        to: {
+          name: "dishes-user",
+          params: {
+            slug: user.slug
+          }
         }
       }
-    }
-  }, [_vm._v("Vedi Menu")])], 2)])])])]);
+    }, [_vm._v("Vedi Menu")])], 1);
+  }), 0)])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
