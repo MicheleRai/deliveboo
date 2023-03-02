@@ -1,9 +1,9 @@
 <template>
     <div class="grid">
         <div class="copertina mb-5"></div>
-        <h1 class="text-center mb-5">Scopri tutti i ristoranti 123</h1>
-        <div class="row text-center m-auto col-10">
-        <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
+        <h1 class="text-center mb-5">Scopri tutti i ristoranti </h1>
+        <div class="row m-auto col-10 justify-content-center">
+        <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success text-center col-1 mx-3 px-3" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
        </div>
         <div class="row row-cols-3 col-10 m-auto">
            <div v-for="user in arrUsers" :key="user.id" class="card">
