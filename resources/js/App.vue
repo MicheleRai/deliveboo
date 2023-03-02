@@ -2,7 +2,7 @@
     <div>
         <div class="d-flex justify-content-between">
             <navbar/>
-            <cart class="fixed-top pt-4" :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price"/>
+            <cart :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price"/>
         </div>
         <main>
             <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart" :tot_price="tot_price"></router-view>

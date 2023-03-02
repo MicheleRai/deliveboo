@@ -28,6 +28,7 @@ const routes = [
         path: '/order',
         name: 'order',
         component: PageOrder,
+        props:true,
     },
 
     {
