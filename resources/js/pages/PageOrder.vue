@@ -99,12 +99,6 @@ export default {
 
     },
 
-    // computed: {
-    //     total() {
-    //         return this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0);
-    //     }
-    // },
-
     mounted() {
         axios.get("/payment/checkout").then((response) => {
             var form = document.querySelector("#payment-form");

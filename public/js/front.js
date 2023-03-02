@@ -5319,11 +5319,6 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
-  // computed: {
-  //     total() {
-  //         return this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0);
-  //     }
-  // },
   mounted: function mounted() {
     var _this2 = this;
     axios.get("/payment/checkout").then(function (response) {
