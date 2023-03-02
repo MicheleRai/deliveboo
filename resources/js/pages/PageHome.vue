@@ -7,7 +7,8 @@
         </div>
         <div class="cards d-flex gap-3 flex-wrap m-auto justify-content-center">
             <div class="rounded-4 mxy-3 mycard justify-content-center" style="width: 15rem; height: 22rem;"
-                v-for="user in arrUsers" :key="user.id">
+            v-for="user in arrUsers" :key="user.id">
+            <!-- v-for="user in arrUsers" :key="user.id"> -->
                 <!-- singola card -->
                 <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
                     class="rounded-top" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
@@ -21,8 +22,9 @@
                 </router-link>
             </div>
             <div class="container-fluid d-flex align-items-center flex-column justify-content-center alligcontent-center py-5 jumbo">
-                <h1 class="text center text-light">Vuoi entrare a far parte della nostra famiglia</h1>
-                <button type="button" class="btn btn-light">Registrati</button>
+                <img src="../../../storage/app/public/uploads/logo-deliveboo-white.png" alt="">
+                <h1 class="fs-1 fw-bolder text center text-light my-5">Vuoi entrare a far parte della nostra famiglia?</h1>
+                <button type="button" class="shadow btn btn-light rounded-pill px-5">Registrati</button>
             </div>
         </div>
     </div>
@@ -52,5 +54,8 @@
     }
     .jumbo{
         background-image: linear-gradient(#00ccbb, #00ccbb, white);
+    }
+    .rounded-pill{
+        color: #03b8a9;
     }
 </style>
