@@ -7,19 +7,22 @@
         <main>
             <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart" :tot_price="tot_price"></router-view>
         </main>
+        <footer-component/>
     </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue';
 import Cart from './components/Cart.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 export default {
     name: 'App',
     components: {
-        Navbar,
-        Cart,
-    },
+    Navbar,
+    Cart,
+    FooterComponent,
+},
 
     data() {
         return {

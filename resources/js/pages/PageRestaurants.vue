@@ -28,17 +28,19 @@
                     <h1 class="py-5">Cosa preferisci?</h1>
                     <div class="cards d-flex flex-wrap">
                         <div class="rounded-4 mb-4 me-4 mycard" style="width: 15rem; height: 22rem;"
-                            v-for="user in arrUsers" :key="user.id"></div>
-                        <!-- singola card -->
-                        <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
-                            class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
-                        <div class="mx-4">
-                            <h4 class="tetx-center">{{ user.name }}</h4>
-                            <div class="my-3">{{ user.address }}</div>
-                            <div class="my-3">080 219 7961</div>
+                            v-for="user in arrUsers" :key="user.id">
+                            <!-- singola card -->
+                            <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
+                                class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
+                            <div class="mx-4">
+                                <h4 class="tetx-center">{{ user.name }}</h4>
+                                <div class="my-3">{{ user.address }}</div>
+                                <div class="my-3">080 219 7961</div>
+                            </div>
+                            <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
+                                class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu
+                            </router-link>
                         </div>
-                        <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
-                            class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
                     </div>
                 </div>
             </div>

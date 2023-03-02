@@ -2,17 +2,25 @@
     <div class="grid">
         <div class="copertina mb-5"></div>
         <h1 class="text-center mb-5">Scopri tutti i ristoranti </h1>
-        <div class="row text-center m-auto col-10">
-        <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
+        <div class="row text-center m-auto justify-content-center mb-3">
+        <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-1 mx-3 p-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
        </div>
-        <div class="row row-cols-3 col-10 m-auto">
-           <div v-for="user in arrUsers" :key="user.id" class="card">
-                <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
-                <h3>{{ user.name }}</h3>
-                <p>{{ user.address }}</p>
-                <router-link :to="{name: 'dishes-user', params: {slug: user.slug}}" class="btn btn-primary">Scopri di più</router-link>
-           </div>
-       </div>
+       <div class="cards d-flex gap-3 flex-wrap m-auto justify-content-center">
+        <div class="rounded-4 mxy-3 mycard justify-content-center" style="width: 15rem; height: 22rem;"
+            v-for="user in arrUsers" :key="user.id">
+            <!-- singola card -->
+            <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
+                class="rounded-top" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
+            <div class="mx-4 text-center">
+                <h4>{{ user.name }}</h4>
+                <div class="my-3">{{ user.address }}</div>
+                <div class="my-3">080 219 7961</div>
+            </div>
+            <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
+                class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu
+            </router-link>
+        </div>
+    </div>
     </div>
 </template>
 <script>
