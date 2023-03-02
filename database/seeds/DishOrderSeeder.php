@@ -14,9 +14,9 @@ class DishOrderSeeder extends Seeder
     {
         $dishesOrders = [];
 
-        for($i = 1; $i <= 50; $i++) {
-            $dishesOrders[$i]['dish_id'] = rand(1, 15);
-            $dishesOrders[$i]['order_id'] = ($i<=20 ? $i : rand(1, 20));
+        for($i = 1; $i <= 100; $i++) {
+            $dishesOrders[$i]['dish_id'] = rand(1, 27);
+            $dishesOrders[$i]['order_id'] = ($i<=40 ? $i : rand(1, 40));
         };
 
         foreach($dishesOrders as $dishOrder){

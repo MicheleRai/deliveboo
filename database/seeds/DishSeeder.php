@@ -12,7 +12,8 @@ class DishSeeder extends Seeder
      */
     public function run()
     {
-        $dishes = config('dishes');
+        $json = file_get_contents(__DIR__ . '/../../dishes.json');
+        $dishes = json_decode($json, true);
         foreach ($dishes as $dish) {
             Dish::create($dish);
         }

@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            'Italiano', 'Giapponese', 'Messicano', 'Carne', 'Pesce', 'Vegetariano', 'Vietnamese', 'Inglese',
+            'Italiano', 'Giapponese', 'Messicano', 'Carne', 'Pesce', 'Vegetariano', 'Hamburger', 'Pizza',
         ];
 
         foreach($categories as $category) {

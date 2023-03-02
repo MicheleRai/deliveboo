@@ -1,0 +1,219 @@
+[
+      {
+        "name": "Spaghetti alla carbonara",
+        "description": "Pasta alla gricia con guanciale, uova, pepe e pecorino",
+        "price": 12.50,
+        "visible": true,
+        "image": "",
+        "user_id": 3
+      },
+      {
+        "name": "Pizza Margherita",
+        "description": "Pizza con pomodoro, mozzarella e basilico",
+        "price": 8.00,
+        "visible": true,
+        "image": "",
+        "user_id": 7
+      },
+      {
+        "name": "Insalata di tonno",
+        "description": "Insalata mista con tonno, olive, pomodori e cetrioli",
+        "price": 9.50,
+        "visible": true,
+        "image": "",
+        "user_id": 2
+      },
+      {
+        "name": "Bistecca alla griglia",
+        "description": "Bistecca di manzo alla griglia con contorno di patate e verdure",
+        "price": 18.00,
+        "visible": true,
+        "image": "",
+        "user_id": 9
+      },
+      {
+        "name": "Tiramisù",
+        "description": "Dolce al cucchiaio con savoiardi, mascarpone e caffè",
+        "price": 6.50,
+        "visible": true,
+        "image": "",
+        "user_id": 12
+      },
+      {
+        "name": "Gelato alla vaniglia",
+        "description": "Gelato alla vaniglia fatto in casa",
+        "price": 4.00,
+        "visible": true,
+        "image": "",
+        "user_id": 5
+      },
+      {
+        "name": "Pasta al pesto",
+        "description": "Pasta con salsa al basilico, pinoli, aglio e parmigiano",
+        "price": 10.50,
+        "user_id": 4,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Pollo alla cacciatora",
+        "description": "Pollo cotto con pomodoro, olive, cipolla e peperoni",
+        "price": 13.00,
+        "user_id": 8,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Insalata Caprese",
+        "description": "Insalata con pomodori, mozzarella e basilico",
+        "price": 7.50,
+        "user_id": 1,
+        "visible": false,
+        "image": ""
+      },
+      {
+        "name": "Risotto ai funghi",
+        "description": "Risotto con funghi porcini, burro e parmigiano",
+        "price": 14.50,
+        "user_id": 6,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Tartare di salmone",
+        "description": "Tartare di salmone fresco con avocado e cetrioli",
+        "price": 15.00,
+        "user_id": 10,
+        "visible": false,
+        "image": ""
+      },
+      {
+        "name": "Gnocchi al gorgonzola",
+        "description": "Gnocchi con salsa al gorgonzola e noci",
+        "price": 11.00,
+        "user_id": 2,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Pizza Margherita",
+        "description": "Pizza con pomodoro, mozzarella e basilico",
+        "price": 8.50,
+        "user_id": 3,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Spaghetti alla carbonara",
+        "description": "Spaghetti con uova, pancetta e pecorino romano",
+        "price": 11.00,
+        "user_id": 5,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Bruschetta",
+        "description": "Pane tostato con pomodori, aglio e basilico",
+        "price": 5.50,
+        "user_id": 7,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Lasagne alla bolognese",
+        "description": "Lasagne con ragù di carne e besciamella",
+        "price": 12.50,
+        "user_id": 9,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Insalata di pollo",
+        "description": "Insalata con pollo, pomodori, cetrioli e olive",
+        "price": 9.50,
+        "user_id": 2,
+        "visible": false,
+        "image": ""
+      },
+      {
+        "name": "Cotoletta alla milanese",
+        "description": "Cotoletta di vitello impanata e fritta",
+        "price": 16.00,
+        "user_id": 10,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Ravioli ai porcini",
+        "description": "Ravioli con ripieno di funghi porcini e burro",
+        "price": 14.00,
+        "user_id": 1,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Salmone alla griglia",
+        "description": "Filetto di salmone alla griglia con verdure",
+        "price": 18.50,
+        "user_id": 11,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Gazpacho",
+        "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
+        "price": 6.50,
+        "user_id": 4,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Gazpacho",
+        "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
+        "price": 6.50,
+        "user_id": 11,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Gazpacho",
+        "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
+        "price": 6.50,
+        "user_id": 6,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Gazpacho",
+        "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
+        "price": 6.50,
+        "user_id": 12,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Cotoletta alla milanese",
+        "description": "Cotoletta di vitello impanata e fritta",
+        "price": 16.00,
+        "user_id": 11,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Cotoletta alla milanese",
+        "description": "Cotoletta di vitello impanata e fritta",
+        "price": 16.00,
+        "user_id": 12,
+        "visible": true,
+        "image": ""
+      },
+      {
+        "name": "Cotoletta alla milanese",
+        "description": "Cotoletta di vitello impanata e fritta",
+        "price": 16.00,
+        "user_id": 6,
+        "visible": true,
+        "image": ""
+      }
+]
+
