@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <h1>Sono la pagina dei piatti specifici in vue</h1>
+      <h1>Sono la pagina dei piatti specifici in vue CAzzo</h1>
         <div v-for="dish in arrDishes.dishes" :key="dish.id">
             <img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';">
            <h3>{{ dish.name }}</h3>
