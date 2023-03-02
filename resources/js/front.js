@@ -12,9 +12,9 @@ import PageDishes from './pages/PageDishes';
 import PageCategories from './pages/PageCategories';
 import PageRestaurants from './pages/PageRestaurants';
 
-import vueBraintree from 'vue-braintree';
+// import vueBraintree from 'vue-braintree';
 
-Vue.use(vueBraintree);
+// Vue.use(vueBraintree);
 Vue.use(VueRouter);
 
 const routes = [
