@@ -29,7 +29,7 @@
                 <textarea class="form-control" name="note" id="note" rows="5" v-model="fields.note"></textarea>
             </div>
 
-            <div v-show="total">Totale: {{ total.toFixed(2) }}&euro;
+            <div v-show="tot_price">Totale: {{ tot_price }}&euro;
             </div>
             <div id="bt-dropin">
             </div>
@@ -75,6 +75,7 @@ export default {
         deleteObj(index) {
             this.arrCart.splice(index, 1);
             this.dishes_id.splice(index, 1);
+            this.$emit('removePrice');
         },
 
         submit() {
@@ -98,11 +99,11 @@ export default {
 
     },
 
-    computed: {
-        total() {
-            return this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0);
-        }
-    },
+    // computed: {
+    //     total() {
+    //         return this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0);
+    //     }
+    // },
 
     mounted() {
         axios.get("/payment/checkout").then((response) => {

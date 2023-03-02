@@ -6,7 +6,7 @@
         </div>
         <div v-show="tot_price">Totale: {{ tot_price }}&euro;
         </div>
-        <router-link v-show="tot_price" :to="{name:'order'}" >Vai all'ordine</router-link>
+        <router-link :to="{name:'order'}" v-show="tot_price">Vai all'ordine</router-link>
     </div>
 </template>
 
@@ -14,7 +14,6 @@
 export default {
     data(){
         return {
-
         }
     },
 
@@ -28,9 +27,9 @@ export default {
         deleteObj(index){
             this.arrCart.splice(index, 1);
             this.dishes_id.splice(index, 1);
+            this.$emit('removePrice');
         },
     },
-
 }
 </script>
 
