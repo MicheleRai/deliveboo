@@ -6,3 +6,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.mycard{
+    position: relative;
+    border: 2px solid $card-blue;
+    font-size: 0.8rem;
+    line-height: 20px;
+
+    .mycard-button{
+    background-color: $card-blue;
+    position: absolute;
+    bottom: -5px;
+    left: 2.8rem;
+    margin: auto;
+    font-size: 0.8rem;
+    box-shadow: 3px 3px 5px black;
+    text-decoration: none;
+    padding: 0.4rem;
+    }
+}

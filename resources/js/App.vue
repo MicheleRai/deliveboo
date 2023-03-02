@@ -61,4 +61,6 @@ export default {
 <style lang="scss">
 @import '~bootstrap/scss/bootstrap';
 
+@import '../sass/app.scss';
+
 </style>
