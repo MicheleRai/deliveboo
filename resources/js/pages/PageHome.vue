@@ -2,16 +2,16 @@
     <div class="grid">
         <div class="copertina mb-5"></div>
         <h1 class="text-center mb-5">Scopri tutti i ristoranti</h1>
-       <div class="row row-cols-3 col-10 m-auto">
+        <div class="row text-center m-auto col-10">
+        <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
+       </div>
+        <div class="row row-cols-3 col-10 m-auto">
            <div v-for="user in arrUsers" :key="user.id" class="card">
                 <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
                 <h3>{{ user.name }}</h3>
                 <p>{{ user.address }}</p>
                 <router-link :to="{name: 'dishes-user', params: {slug: user.slug}}" class="btn btn-primary">Scopri di più</router-link>
            </div>
-       </div>
-       <div class="row">
-        <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
        </div>
     </div>
 </template>
