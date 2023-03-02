@@ -7,7 +7,7 @@
 
         <form @submit.prevent="submit" id="payment-form">
             <div class="form-group">
-                <label for="name_user">Nome e cognome</label>
+                <label for="name_user">Nome e cognome e codice fiscale</label>
                 <input type="text" class="form-control" name="name_user" id="name_user" v-model="fields.name_user" />
                 <div v-if="errors && errors.name_user" class="text-danger">{{ errors.name_user[0] }}</div>
             </div>
