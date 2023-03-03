@@ -2,13 +2,13 @@
     <div class="grid">
         <div class="copertina mb-5"></div>
         <h1 class="text-center mb-5">Scopri tutti i ristoranti </h1>
-        <div class="d'flex row text-center m-auto justify-content-center mb-3 flex-wrap gap-2">
+        <div class="d-flex row text-center m-auto justify-content-center mb-3 flex-wrap gap-2">
         <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-2 mx-3 p-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
         </div>
         <div class="cards d-flex gap-3 flex-wrap m-auto justify-content-center">
                 <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 24rem;" v-for="user in arrUsers" :key="user.id">
                     <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
-                    class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
+                    class="rounded-top" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
                     <div class="mx-4">
                         <h5 class="tetx-center">{{ user.name }}</h5>
                         <div class="my-3">{{ user.address }}</div>
