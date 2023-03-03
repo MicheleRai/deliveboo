@@ -71,8 +71,10 @@ export default {
 .nav{
     z-index: 1031;
 }
-// .cart{
-//     margin-top: 50px;
-// }
+.cart{
+    margin-top: 50px;
+    max-width: 1100px;
+}
+
 
 </style>
