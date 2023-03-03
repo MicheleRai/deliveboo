@@ -13,7 +13,7 @@
         </div>
 
         <div class="cards-container">
-            <div class="rounded-4 mycard"
+            <div class="rounded-4 my-card"
             v-for="dish in arrDishes.dishes" :key="dish.id">
                 <div class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
                 <div class="dish-name">{{ dish.name }}</div>
@@ -105,13 +105,17 @@
     margin-bottom: 50px;
    }
 
-   .mycard{
+   .my-card{
     margin: 2rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 500px;
     width: 300px;
+    position: relative;
+    border: 2px solid #00ccbb;
+    font-size: 0.8rem;
+    line-height: 20px;
    }
 
    .dish-img-container{
@@ -167,5 +171,9 @@
     white-space: nowrap;
     font-size: 1.5em;
     box-shadow: 3px 3px #888888;
+   }
+   .dish-button:hover{
+    background-color: white;
+    color: black;
    }
 </style>

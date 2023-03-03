@@ -5,7 +5,7 @@
             {{ objCart.name }} - {{ objCart.price }}&euro;
         </div>
 
-        <form @submit.prevent="submit" id="payment-form">
+        <form @submit.prevent="submit" id="payment-form" style="margin-top: 100px;">
             <div class="form-group">
                 <label for="name_user">Nome e cognome</label>
                 <input type="text" class="form-control" name="name_user" id="name_user" v-model="fields.name_user" />
