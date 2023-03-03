@@ -202,16 +202,32 @@ width: 100%;
 .restaurant-name{
     font-size: 5em;
     margin: .5em;
+    margin-left: 30px;
 }
 .restaurant-address{
     font-size: 2em;
-    margin-left: 1.8em;
+    margin-left: 30px;
 }
 .restaurant-name{
     font-size: 5em;
     margin: .5em;
+    margin-left: 30px;
 }
 
+.tags-container{
+    display: flex;
+    margin-left: 30px;
+}
+.tag-restaurant{
+    padding: .5rem 1rem;
+    background-color: #00ccbb;
+    width: fit-content;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-right: .5rem;
+    font-size: 2em;
+
+}
 
 
 

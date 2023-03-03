@@ -12,12 +12,14 @@
     </div>
         <h1 class="restaurant-name">{{ Auth::user()->name }}</h1>
         <div class="restaurant-address">{{Auth::user()->address}}</div>
-        <div class="restaurant-address">{{Auth::user()->vat_number}}</div>
-        @foreach ($categories as $category)
-            <div class>
-                    {{ $category->name }}
-            </div>
-        @endforeach
+        <div class="restaurant-address">P. IVA: {{Auth::user()->vat_number}}</div>
+        <div class="tags-container">
+            @foreach ($categories as $category)
+                <div class="tag-restaurant">
+                        {{ $category->name }}
+                </div>
+            @endforeach
+        </div>
     </div>
 </div>
 
