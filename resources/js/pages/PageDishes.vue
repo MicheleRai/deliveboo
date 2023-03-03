@@ -17,9 +17,9 @@
             v-for="dish in arrDishes.dishes" :key="dish.id">
                 <img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';"
                 class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
-                <h4>{{ dish.name }}</h4>
-                <h5>&euro; {{ dish.price }}</h5>
-                <button> Aggiungi al carrello</button>
+                <div class="dish-name">{{ dish.name }}</div>
+                <div class="dish-price"><span style="color: #00ccbb ;">&euro;</span> {{ dish.price }}</div>
+                <button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
             </div>
         </div>
     </div>
@@ -107,6 +107,19 @@
 
    .mycard{
     margin: 2rem;
+    display: flex;
+    flex-direction: column;
+   }
+
+   .dish-name{
     text-align: center;
+    font-size: 2em;
+    margin-top: .5em;
+   }
+
+   .dish-price{
+    font-size: 2em;
+    margin-top: .5em;
+    margin-left: .5em;
    }
 </style>
