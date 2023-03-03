@@ -61,12 +61,6 @@ export default {
             console.log(this.cazzo)
         }
     },
-
-    // computed: {
-    //     total() {
-    //         return this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
-    //     }
-    // }
 }
 
 </script>
@@ -77,8 +71,8 @@ export default {
 .nav{
     z-index: 1031;
 }
-.carrello{
-    z-index: 2040;
-}
+// .cart{
+//     margin-top: 50px;
+// }
 
 </style>
