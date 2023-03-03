@@ -10,8 +10,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <router-link class="nav-link active" :to="{ name: 'home' }">Home</router-link>
-                        <router-link class="nav-link active" :to="{ name: 'restaurants' }">Ristoranti</router-link>
+                        <router-link class="nav-link active navbar-button me-1" :to="{ name: 'home' }">Home</router-link>
+                        <router-link class="nav-link active navbar-button me-1" :to="{ name: 'restaurants' }">Ristoranti</router-link>
 
                         <a href="/login" class="nav-link active btn btn-primary text-light">Sei un ristoratore? Clicca qui</a>
                     </div>
@@ -58,6 +58,9 @@
   <style>
   nav{
       transition: all 0.5s ease-in-out;
+  }
+  .navbar-button{
+    background-color: #ffffff6d;
   }
   .nav-content{
     max-width: 1100px;
