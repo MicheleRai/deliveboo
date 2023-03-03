@@ -15,7 +15,7 @@
         <div class="cards-container">
             <div class="rounded-4 mycard"
             v-for="dish in arrDishes.dishes" :key="dish.id">
-                <img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img">
+                <div class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
                 <div class="dish-name">{{ dish.name }}</div>
                 <div class="dish-info">{{ dish.description }}</div>
                 <div class="dish-price"><span style="color: #00ccbb ;">&euro;</span> {{ dish.price }}</div>
@@ -114,12 +114,18 @@
     width: 300px;
    }
 
-   .dish-img{
-    position: relative;
+   .dish-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     height: 50%;
     width: 102%;
-    top: -2px;
-    left: -2px;
+    position: relative;
+    right: 1%;
+   }
+   .dish-img{
+    height: 100%;
 
    }
    .dish-name{
