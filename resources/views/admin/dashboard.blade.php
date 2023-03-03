@@ -1,22 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
-    <div class="col-12 m-auto text-light py-5">
+<div>
+    <div class="cover-container">
         <img src="{{ asset('storage/' . Auth::user()->cover_image) }}" alt="img">
     </div>
-    <div class="col-10 m-auto">
-        <img src="{{ asset('storage/' . Auth::user()->logo_image) }}" alt="img">
-        <h2>{{ Auth::user()->name }}</h2>
-        <div>{{Auth::user()->address}}</div>
-        <div>{{Auth::user()->vat_number}}</div>
-        @foreach ($categories as $category)
-            <div class>
-                    {{ $category->name }}
-            </div>
-        @endforeach
+    <div class="logo-box">
+        <div class="logo-container">
+        <img class="logo" src="{{ asset('storage/' . Auth::user()->logo_image) }}" alt="img">
+        </div>
     </div>
-
+        <h1 class="restaurant-name">{{ Auth::user()->name }}</h1>
+        <div class="restaurant-address">{{Auth::user()->address}}</div>
+        <div class="restaurant-address">P. IVA: {{Auth::user()->vat_number}}</div>
+        <div class="tags-container">
+            @foreach ($categories as $category)
+                <div class="tag-restaurant">
+                        {{ $category->name }}
+                </div>
+            @endforeach
+        </div>
+    </div>
 </div>
 
 @endsection

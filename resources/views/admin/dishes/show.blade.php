@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h2>{{ $dish->name }}</h2>
-        <img src="{{ asset($dish->image ? 'storage/' . $dish->image : 'storage/placeholder.jpeg') }}" alt="{{ $dish->name }}">
-        <p>{{ $dish->price }}</p>
-        <p>{{ $dish->description }}</p>
+        <h1>{{ $dish->name }}</h1>
+        <img src="{{ asset($dish->image ? 'storage/' . $dish->image : 'storage/placeholder.jpeg') }}" alt="{{ $dish->name }}" class="show-dish-img rounded-4">
+        <h2>{{ $dish->description }}</h2>
+        <h2><span style="color: #00ccbb;">&euro;</span> {{ $dish->price }} </h2>
+
     </div>
 @endsection
