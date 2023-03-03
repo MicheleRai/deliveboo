@@ -8,7 +8,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 .copertina{
-    height: 50vh;
+    height: 65vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -24,11 +24,15 @@
     background-color: $card-blue;
     position: absolute;
     bottom: -5px;
-    left: 2.8rem;
     margin: auto;
     font-size: 0.8rem;
     box-shadow: 3px 3px 5px black;
     text-decoration: none;
     padding: 0.4rem;
     }
+}
+
+.category{
+    color: $category-grey;
+    text-decoration: none;
 }

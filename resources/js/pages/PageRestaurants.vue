@@ -1,17 +1,17 @@
 <template>
     <div>
         <div class="contenitore">
-            <img src="https://www.ucsf.edu/sites/default/files/styles/article_feature_banner__image/public/2019-09/vegetables-cooking-food-banner-size.jpg"
-                alt="" class="w-100" style="width: 100vw; height: 50vh; object-fit: cover; object-position: top center">
+            <img src="../../../public/images/chef.webp"
+                alt="" class="w-100" style="width: 100vw; height: 60vh; object-fit: cover; object-position: center; opacity: 0.8">
             <div class="row bg-white">
                 <!-- parte sinistra -->
                 <div class="col-3 p-5 col-sinistra">
                     <div class="py-2">
-                        <h2>Filtra</h2>
+                        <h3>Filtra</h3>
                         <div>Tipologia di ristorante</div>
                     </div>
                     <div>
-                        <h2 class="grey-line">Categorie</h2>
+                        <h3 class="grey-line">Categorie</h3>
                         <div class="categories d-flex flex-column">
                             <div v-for="categories in arrCategories" :key="categories.id" class="fs-5 lh-lg">
                                 <router-link class="col-1 text-decoration-none category" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
@@ -24,7 +24,7 @@
                 <div class="col-9 px-5">
                     <h1 class="py-5">Cosa preferisci?</h1>
                     <div class="cards d-flex flex-wrap">
-                        <div class="rounded-4 mb-4 me-4 mycard" style="width: 13rem; height: 21.5rem;"
+                        <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 24rem;"
                             v-for="user in arrUsers" :key="user.id"
                         >
                             <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
@@ -34,8 +34,10 @@
                                 <div class="my-3">{{ user.address }}</div>
                                 <div class="my-3">080 219 7961</div>
                             </div>
-                            <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
-                            class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
+                            <div class="d-flex justify-content-center">
+                                <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
+                                class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
+                            </div>
                         </div>
                     </div>
                 </div>
