@@ -6,10 +6,6 @@
             <div class="row bg-white">
                 <!-- parte sinistra -->
                 <div class="col-3 p-5 col-sinistra">
-                    <div class="py-2">
-                        <h3>Filtra</h3>
-                        <div>Tipologia di ristorante</div>
-                    </div>
                     <div>
                         <h3 class="grey-line">Categorie</h3>
                         <div class="categories d-flex flex-column">

@@ -6,12 +6,15 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
+body{
+    background-color: white;
+}
 .copertina{
-    height: 50vh;
+    padding-top: 8em;
+    padding-left: 4em;
+    height: 70vh;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: right;
 }
 
 .mycard{
