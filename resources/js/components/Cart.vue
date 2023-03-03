@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex align-items-end flex-column m-auto">
+    <div class="carrello d-flex align-items-end flex-column m-auto">
         <div class="carrello" v-for="(objCart, index) in arrCart" :key="index">
             <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
             {{ objCart.name }} - {{ objCart.price }}&euro;
@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss">
 .carrello{
-    z-index: 2040;
+    background-color: rgb(157, 214, 214);
+    border-radius:0 0 25px 25px ;
 }
 </style>
