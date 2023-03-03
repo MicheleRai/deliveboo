@@ -1,13 +1,15 @@
 <template>
-    <div class="carrello d-flex align-items-end flex-column m-auto">
-        <div class="pe-3 pb-2" v-if="arrCart.length == 0">Il tuo carrello e vuoto</div>
-        <div class="carrello" v-for="(objCart, index) in arrCart" :key="index">
+    <div class="carrello d-flex flex-column m-auto">
+        <div class="ps-3 pb-2" v-if="arrCart.length == 0">
+            <h4>Il tuo carrello è vuoto</h4>
+        </div>
+        <div class="carrello ps-3" v-for="(objCart, index) in arrCart" :key="index">
             <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
             {{ objCart.name }} - {{ objCart.price }}&euro;
         </div>
-        <div v-show="tot_price">Totale: {{ tot_price }}&euro;
+        <div class="ps-3" v-show="tot_price">Totale: {{ tot_price }}&euro;
         </div>
-        <router-link :to="{name:'order'}" v-show="tot_price">Vai all'ordine</router-link>
+        <router-link class="ps-3" :to="{name:'order'}" v-show="tot_price">Vai all'ordine</router-link>
     </div>
 </template>
 
