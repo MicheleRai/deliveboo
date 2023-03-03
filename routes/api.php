@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\BraintreeController;
 */
 
 Route::get('/dishes', 'Api\DishController@index')->name('dishes.index');
+Route::get('/dishes/paginate', 'Api\DishController@paginate')->name('dishes.paginate');
 Route::get('/dishes/{dish}', 'Api\DishController@show')->name('dishes.show');
 Route::get('/categories/{category}', 'Api\DishController@categories')->name('categories');
 

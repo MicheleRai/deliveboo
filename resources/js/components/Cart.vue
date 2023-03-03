@@ -4,7 +4,7 @@
             <h4>Il tuo carrello è vuoto</h4>
         </div>
         <div class="carrello ps-3" v-for="(objCart, index) in arrCart" :key="index">
-            <div class="d-inline-block btn btn-danger" @click="deleteObj(index)">X</div>
+            <div class="d-inline-block btn btn-danger mb-1" @click="deleteObj(index)">X</div>
             {{ objCart.name }} - {{ objCart.price }}&euro;
         </div>
         <div class="ps-3" v-show="tot_price">Totale: {{ tot_price }}&euro;

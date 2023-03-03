@@ -56,4 +56,16 @@ class DishController extends Controller
             'restaurants' => $restaurants,
         ]);
     }
+
+    public function paginate()
+    {
+        $users = User::limit(6)->get();
+        $categories = Category::all();
+
+        return response()->json ([
+            'success' => true,
+            'results' => $users,
+            'categories' => $categories,
+        ]);
+    }
 }
