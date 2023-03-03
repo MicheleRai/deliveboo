@@ -138,8 +138,7 @@
 
    .dish-info{
     font-size: 1.5em;
-    padding-top: 5px;
-    padding-left: 15px;
+    padding: 5px 15px;
     height: 15%;
     // background-color: blue;
    }
