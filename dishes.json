@@ -4,7 +4,7 @@
         "description": "Pasta alla gricia con guanciale, uova, pepe e pecorino",
         "price": 12.50,
         "visible": true,
-        "image": "",
+        "image": "uploads/spaghetti-carbonara.jpg",
         "user_id": 3
       },
       {
@@ -12,7 +12,7 @@
         "description": "Pizza con pomodoro, mozzarella e basilico",
         "price": 8.00,
         "visible": true,
-        "image": "",
+        "image": "uploads/pizza-intera.webp",
         "user_id": 7
       },
       {
@@ -20,7 +20,7 @@
         "description": "Insalata mista con tonno, olive, pomodori e cetrioli",
         "price": 9.50,
         "visible": true,
-        "image": "",
+        "image": "uploads/insalata-tonno.webp",
         "user_id": 2
       },
       {
@@ -28,7 +28,7 @@
         "description": "Bistecca di manzo alla griglia con contorno di patate e verdure",
         "price": 18.00,
         "visible": true,
-        "image": "",
+        "image": "uploads/bistecca-griglia.jpg",
         "user_id": 9
       },
       {
@@ -36,7 +36,7 @@
         "description": "Dolce al cucchiaio con savoiardi, mascarpone e caffè",
         "price": 6.50,
         "visible": true,
-        "image": "",
+        "image": "uploads/tiramisu.webp",
         "user_id": 12
       },
       {
@@ -44,7 +44,7 @@
         "description": "Gelato alla vaniglia fatto in casa",
         "price": 4.00,
         "visible": true,
-        "image": "",
+        "image": "uploads/gelato-vaniglia.jpg",
         "user_id": 5
       },
       {
@@ -53,7 +53,7 @@
         "price": 10.50,
         "user_id": 4,
         "visible": true,
-        "image": ""
+        "image": "uploads/pasta-pesto.jpg"
       },
       {
         "name": "Pollo alla cacciatora",
@@ -61,7 +61,7 @@
         "price": 13.00,
         "user_id": 8,
         "visible": true,
-        "image": ""
+        "image": "uploads/pollo-cacciatora.jpg"
       },
       {
         "name": "Insalata Caprese",
@@ -69,7 +69,7 @@
         "price": 7.50,
         "user_id": 1,
         "visible": false,
-        "image": ""
+        "image": "uploads/insalata-caprese.webp"
       },
       {
         "name": "Risotto ai funghi",
@@ -77,7 +77,7 @@
         "price": 14.50,
         "user_id": 6,
         "visible": true,
-        "image": ""
+        "image": "uploads/risotto-funghi.jpg"
       },
       {
         "name": "Tartare di salmone",
@@ -85,7 +85,7 @@
         "price": 15.00,
         "user_id": 10,
         "visible": false,
-        "image": ""
+        "image": "uploads/tartare-salmone.webp"
       },
       {
         "name": "Gnocchi al gorgonzola",
@@ -93,7 +93,7 @@
         "price": 11.00,
         "user_id": 2,
         "visible": true,
-        "image": ""
+        "image": "uploads/gnocchi-gorgonzola.webp"
       },
       {
         "name": "Pizza Margherita",
@@ -101,7 +101,7 @@
         "price": 8.50,
         "user_id": 3,
         "visible": true,
-        "image": ""
+        "image": "uploads/pizza-tagliata.webp"
       },
       {
         "name": "Spaghetti alla carbonara",
@@ -109,7 +109,7 @@
         "price": 11.00,
         "user_id": 5,
         "visible": true,
-        "image": ""
+        "image": "uploads/spaghetti-carbonara.jpg"
       },
       {
         "name": "Bruschetta",
@@ -117,7 +117,7 @@
         "price": 5.50,
         "user_id": 7,
         "visible": true,
-        "image": ""
+        "image": "uploads/bruschetta.webp"
       },
       {
         "name": "Lasagne alla bolognese",
@@ -125,7 +125,7 @@
         "price": 12.50,
         "user_id": 9,
         "visible": true,
-        "image": ""
+        "image": "uploads/lasagne.webp"
       },
       {
         "name": "Insalata di pollo",
@@ -133,7 +133,7 @@
         "price": 9.50,
         "user_id": 2,
         "visible": false,
-        "image": ""
+        "image": "uploads/insalata-di-pollo.jpg"
       },
       {
         "name": "Cotoletta alla milanese",
@@ -141,15 +141,15 @@
         "price": 16.00,
         "user_id": 10,
         "visible": true,
-        "image": ""
+        "image": "uploads/costolette-alla-milanese.webp"
       },
       {
         "name": "Ravioli ai porcini",
         "description": "Ravioli con ripieno di funghi porcini e burro",
         "price": 14.00,
         "user_id": 1,
-        "visible": true,
-        "image": ""
+        "visible": false,
+        "image": "uploads/ravioli-funghi.webp"
       },
       {
         "name": "Salmone alla griglia",
@@ -157,23 +157,23 @@
         "price": 18.50,
         "user_id": 11,
         "visible": true,
-        "image": ""
+        "image": "uploads/salmone-alla-griglia.jpg"
       },
       {
-        "name": "Gazpacho",
-        "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
-        "price": 6.50,
+        "name": "Salmone alla griglia",
+        "description": "Filetto di salmone alla griglia con verdure",
+        "price": 20.00,
         "user_id": 4,
         "visible": true,
-        "image": ""
+        "image": "uploads/salmone-alla-griglia.jpg"
       },
       {
         "name": "Gazpacho",
         "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
         "price": 6.50,
         "user_id": 11,
-        "visible": true,
-        "image": ""
+        "visible": false,
+        "image": "uploads/gazpacho.webp"
       },
       {
         "name": "Gazpacho",
@@ -181,15 +181,15 @@
         "price": 6.50,
         "user_id": 6,
         "visible": true,
-        "image": ""
+        "image": "uploads/gazpacho.webp"
       },
       {
-        "name": "Gazpacho",
-        "description": "Zuppa fredda di pomodori, peperoni e cetrioli",
-        "price": 6.50,
+        "name": "Hamburger",
+        "description": "Hamburger con carne, insalata, pomodoro e salsa",
+        "price": 10.50,
         "user_id": 12,
-        "visible": true,
-        "image": ""
+        "visible": false,
+        "image": "uploads/hamburgers.webp"
       },
       {
         "name": "Cotoletta alla milanese",
@@ -197,7 +197,7 @@
         "price": 16.00,
         "user_id": 11,
         "visible": true,
-        "image": ""
+        "image": "uploads/costolette-alla-milanese.webp"
       },
       {
         "name": "Cotoletta alla milanese",
@@ -205,15 +205,23 @@
         "price": 16.00,
         "user_id": 12,
         "visible": true,
-        "image": ""
+        "image": "uploads/costolette-alla-milanese.webp"
       },
       {
         "name": "Cotoletta alla milanese",
         "description": "Cotoletta di vitello impanata e fritta",
         "price": 16.00,
         "user_id": 6,
+        "visible": false,
+        "image": "uploads/costolette-alla-milanese.webp"
+      },
+      {
+        "name": "Calzone",
+        "description": "Calzone ripieno di pomodoro",
+        "price": 7.00,
+        "user_id": 3,
         "visible": true,
-        "image": ""
+        "image": "uploads/calzone.webp"
       }
 ]
 
