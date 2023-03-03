@@ -14,7 +14,7 @@
                     </div>
                     <router-link :to="{ name: 'order' }" class="order-link">Il tuo ordine</router-link>
                 </div>
-                <button @click="$emit('aperturaCarrello')" class="btn btn-warning position-relative">
+                <button @click="$emit('aperturaCarrello')" class="order-link-due">
                     <img class="img-carrello" src="../../../storage/app/public/shopping-cart.png" alt="">
                     <div class="contatore position-absolute rounded-circle">0</div>
                 </button>
@@ -84,7 +84,7 @@
   .restaurant-link{
     padding: .5em 1em;
     background-color: #3fa9f5;
-    color: white;
+    color: black;
     text-decoration: none;
     border-radius: 10px;
     margin: 0 1em;
@@ -110,4 +110,19 @@
     background-color: orange;
     color: black;
   }
+
+  .order-link-due{
+    position: relative;
+    background-color: rgb(255, 200, 0);
+    border-radius: 10px;
+    padding: .5em 1em .5em .5em;
+    border: none;
+
+  }
+
+  .order-link-due:hover{
+    background-color: orange;
+    color: black;
+  }
+
   </style>
