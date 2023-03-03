@@ -6,3 +6,33 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.order{
+    border: 3px solid $verde-speranza-non-si-perde;
+    background-color: white;
+}
+
+.order-button{
+    border: 2px solid $verde-speranza-non-si-perde;
+    background-color: $verde-speranza-non-si-perde;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 0.6rem;
+}
+
+.order-button:hover{
+    border: 2px solid $verde-speranza-non-si-perde;
+    background-color: white;
+    color: black;
+}
+
+.euro{
+    color: $verde-speranza-non-si-perde;
+}
+
+.order-show{
+    border: 3px solid $verde-speranza-non-si-perde;
+    background-color: white;
+}
