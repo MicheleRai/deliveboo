@@ -2,7 +2,7 @@
     <div class="grid">
         <div class="copertina mb-5"></div>
         <h1 class="text-center mb-5">Scopri tutti i ristoranti </h1>
-        <div class="d'flex row text-center m-auto justify-content-center mb-3 flex-wrap gap-2">
+        <div class="d-flex row text-center m-auto justify-content-center mb-3 flex-wrap gap-2">
         <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-success col-2 mx-3 p-1" :to="{name: 'categories', params: {slug: categories.slug}}">{{ categories.name }}</router-link>
         </div>
         <div class="cards d-flex gap-3 flex-wrap m-auto justify-content-center">
