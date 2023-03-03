@@ -1,9 +1,7 @@
 <template>
     <div>
-        <div class="d-flex justify-content-between">
-            <navbar />
-            <cart :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price" @removePrice="removePrice"/>
-        </div>
+        <navbar @aperturaCarrello="aperturaCarrello" class="nav" />
+        <cart v-if="cazzo==true" class="cart fixed-top" :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price" @removePrice="removePrice"/>
         <main>
             <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart" :tot_price="tot_price" @removePrice="removePrice"></router-view>
         </main>
@@ -30,6 +28,7 @@ export default {
             user: null,
             dishes_id: [],
             tot_price: null,
+            cazzo:false,
         }
     },
 
@@ -56,6 +55,10 @@ export default {
 
         removePrice(){
             this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
+        },
+        aperturaCarrello(){
+            this.cazzo = !this.cazzo
+            console.log(this.cazzo)
         }
     },
 
@@ -70,5 +73,12 @@ export default {
 <style lang="scss">
 @import '~bootstrap/scss/bootstrap';
 @import '../sass/app.scss';
+
+.nav{
+    z-index: 1031;
+}
+.carrello{
+    z-index: 2040;
+}
 
 </style>

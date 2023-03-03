@@ -19,7 +19,7 @@
                 class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
                 <h4>{{ dish.name }}</h4>
                 <h5>&euro; {{ dish.price }}</h5>
-                <button> Aggiungi al carrello</button>
+                <button @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
             </div>
         </div>
     </div>
