@@ -13,13 +13,13 @@
         </div>
 
         <div class="cards-container">
-            <div class="rounded-4 mycard" style="width: 15rem; height: 22rem;"
+            <div class="rounded-4 mycard"
             v-for="dish in arrDishes.dishes" :key="dish.id">
-                <img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';"
-                class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
+                <img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img">
                 <div class="dish-name">{{ dish.name }}</div>
+                <div class="dish-info">{{ dish.description }}</div>
                 <div class="dish-price"><span style="color: #00ccbb ;">&euro;</span> {{ dish.price }}</div>
-                <button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
+                <div class="dish-button-container"><button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button></div>
             </div>
         </div>
     </div>
@@ -109,17 +109,58 @@
     margin: 2rem;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    height: 500px;
+    width: 300px;
    }
 
+   .dish-img{
+    position: relative;
+    height: 50%;
+    width: 102%;
+    top: -2px;
+    left: -2px;
+
+   }
    .dish-name{
     text-align: center;
     font-size: 2em;
-    margin-top: .5em;
+    padding-top: 10px;
+    height: 10%;
+    // background-color: red;
+   }
+
+   .dish-info{
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-left: 15px;
+    height: 15%;
+    // background-color: blue;
    }
 
    .dish-price{
     font-size: 2em;
-    margin-top: .5em;
-    margin-left: .5em;
+    padding-top: 25px;
+    padding-left: 15px;
+    height: 15%;
+    // background-color: green;
+   }
+
+   .dish-button-container{
+    text-align: center;
+    height: 10%;
+    // background-color: yellow;
+   }
+
+   .dish-button{
+    background-color: #00ccbb;
+    width: fit-content;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    white-space: nowrap;
+    font-size: 1.5em;
+    box-shadow: 3px 3px #888888;
    }
 </style>
