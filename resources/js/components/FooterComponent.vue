@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- <img src="../../../public/storage/uploads/footer.svg" alt=""> -->
+            <!-- <img src="../../../storage/app/public/placeholder.svg" alt=""> -->
             <div class="copyright text-muted">2023© Deliveboo | Team 6 e tutti i diritti riservati</div>
         </footer>
     </div>
@@ -47,16 +47,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .footer-container{
     background: #1d1d1d;
 }
 footer{
-    background-image: url('../../../public/storage/uploads/footer.svg');
+    background-image: url('../../../storage/app/public/placeholder.svg');
     z-index: 1;
     background-size: cover;
-}
-h2{
+
+    h2 {
     color: white;
+    }
 }
+
 </style>
