@@ -5,7 +5,7 @@
                 <div class="collegamenti-li">
                     <h2>Delive6oo</h2>
                     <ul class="list-unstyled">
-                        <li><a class="text-decoration-none text-white" href="">Ristornati</a></li>
+                        <li><a class="text-decoration-none text-white" href="">Ristoranti</a></li>
                         <li><a class="text-decoration-none text-white" href="">Piatti</a></li>
                     </ul>
                 </div>
