@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
                 'vat_number' => '01234567893',
                 'slug' => 'kenta-s-sushi',
                 'logo_image' => 'uploads/sushi-logo.avif',
-                'cover_image' => 'uploads/osaka-ristorante',
+                'cover_image' => 'uploads/osaka-ristorante.webp',
             ],
             [
                 'email' => 'damichele@gmail.com',
