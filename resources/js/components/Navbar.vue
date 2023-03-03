@@ -10,14 +10,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <router-link class="nav-link active" :to="{ name: 'home' }">Home</router-link>
-                        <router-link class="nav-link active" :to="{ name: 'restaurants' }">Ristoranti</router-link>
+                        <router-link class="nav-link active navbar-button me-1" :to="{ name: 'home' }">Home</router-link>
+                        <router-link class="nav-link active navbar-button me-1" :to="{ name: 'restaurants' }">Ristoranti</router-link>
 
                         <a href="/login" class="nav-link active btn btn-primary text-light">Sei un ristoratore? Clicca qui</a>
                     </div>
                     <router-link :to="{ name: 'order' }" class="btn btn-warning">Ordini</router-link>
                 </div>
-                <button @click="$emit('aperturaCarrello')" class="btn btn-warning">cazzo</button>
+                <button @click="$emit('aperturaCarrello')" class="btn btn-warning position-relative">
+                    <img class="img-carrello" src="../../../storage/app/public/shopping-cart.png" alt="">
+                    <div class="contatore position-absolute rounded-circle">0</div>
+                </button>
 
             </div>
         </div>
@@ -56,15 +59,28 @@
   nav{
       transition: all 0.5s ease-in-out;
   }
+  .navbar-button{
+    background-color: #ffffff6d;
+  }
   .nav-content{
     max-width: 1100px;
   }
   .onScroll {
     background-color: #ffffff;
-    box-shadow: 0 3px 10px (0, 0, 0, 0.15);
+    box-shadow: 10px 10px 5px 12px (black 0.175);
     color: white;
   }
   .nav-img{
     height: 35px;
+  }
+  .img-carrello{
+    height: 35px;
+  }
+  .contatore{
+    top: 25px;
+    right: 3px;
+    background-color: rgb(8, 207, 8);
+    padding:0 5px;
+    font-size: small;
   }
   </style>

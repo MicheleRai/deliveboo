@@ -61,8 +61,8 @@ class UserSeeder extends Seeder
                 'address' => 'Viale Le Noci, 18 - Bari (BA)',
                 'vat_number' => '01234567894',
                 'slug' => 'i-panzerotti-di-michele',
-                'logo_image' => 'uploads/panzerotti.webp',
-                'cover_image' => 'uploads/logo-panzerotti.jpeg',
+                'logo_image' => 'uploads/logo-panzerotti.jpeg',
+                'cover_image' => 'uploads/panzerotti.webp',
             ],
             [
                 'email' => 'lascaletta@gmail.com',

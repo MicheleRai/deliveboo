@@ -29,6 +29,10 @@
     box-shadow: 3px 3px 5px black;
     text-decoration: none;
     padding: 0.4rem;
+
+        &:hover{
+            background-color: $verde-speranza-non-si-perde;
+        }
     }
 }
 

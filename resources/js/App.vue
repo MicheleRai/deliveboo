@@ -1,7 +1,13 @@
 <template>
     <div>
         <navbar @aperturaCarrello="aperturaCarrello" class="nav" />
-        <cart v-if="cazzo==true" class="cart fixed-top" :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price" @removePrice="removePrice"/>
+        <div class="cart-container fixed-top m-auto">
+            <!--tentativo di creare un carrello vuoto
+                <div v-if="btnCarrello==false" class="carrello-vuoto cart me-0">
+                </div>
+            -->
+            <cart v-if="btnCarrello==true" class="cart me-0" :arr-cart="arrCart" :dishes_id="dishes_id" :tot_price="tot_price" @removePrice="removePrice"/>
+        </div>
         <main>
             <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart" :tot_price="tot_price" @removePrice="removePrice"></router-view>
         </main>
@@ -28,7 +34,7 @@ export default {
             user: null,
             dishes_id: [],
             tot_price: null,
-            cazzo:false,
+            btnCarrello:false,
         }
     },
 
@@ -57,8 +63,8 @@ export default {
             this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
         },
         aperturaCarrello(){
-            this.cazzo = !this.cazzo
-            console.log(this.cazzo)
+            this.btnCarrello = !this.btnCarrello
+            console.log(this.btnCarrello)
         }
     },
 }
@@ -72,8 +78,12 @@ export default {
     z-index: 1031;
 }
 .cart{
-    padding-top: 50px;
-    max-width: 1100px;
+    padding-top: 65px;
+    max-width: 300px;
+}
+.cart-container{
+    max-width: 1120px;
+
 }
 
 
