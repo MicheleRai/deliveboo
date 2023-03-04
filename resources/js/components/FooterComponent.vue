@@ -5,8 +5,8 @@
                 <div class="collegamenti-li">
                     <h2>Delive6oo</h2>
                     <ul class="list-unstyled">
-                        <li><a class="text-decoration-none text-white" href="">Ristoranti</a></li>
-                        <li><a class="text-decoration-none text-white" href="">Piatti</a></li>
+                        <li><router-link class="text-decoration-none text-white" :to="{ name: 'restaurants' }">Ristoranti</router-link></li>
+                        <li><a class="text-decoration-none text-white" href="">Home</a></li>
                     </ul>
                 </div>
                 <div class="collegamenti-li">
@@ -26,13 +26,14 @@
                 <div class="collegamenti-li">
                     <h2>App</h2>
                     <ul class="list-unstyled">
-                        <li><a class="text-decoration-none text-white" href="">icona</a></li>
-                        <li><a class="text-decoration-none text-white" href="">icona</a></li>
+                        <li><a class="text-decoration-none text-white" href="">
+                            <img src="../../../storage/app/public/app-store-badges-it.svg" alt="">
+                        </a></li>
                     </ul>
                 </div>
             </div>
             <!-- <img src="../../../storage/app/public/placeholder.svg" alt=""> -->
-            <div class="copyright text-muted">2023© Deliveboo | Team 6 e tutti i diritti riservati</div>
+            <div class="copyright">2023© Deliveboo | Team 6 e tutti i diritti riservati</div>
         </footer>
     </div>
 </template>
@@ -49,16 +50,17 @@ export default {
 
 <style lang="scss">
 .footer-container{
-    background: #1d1d1d;
-}
-footer{
-    background-image: url('../../../storage/app/public/placeholder.svg');
+    background-image: url(https://fabrica22.sk/assets/pictures/global/_w1920h840/headerfabrica.png);
     z-index: 1;
     background-size: cover;
-
+}
+footer{
     h2 {
     color: white;
     }
+}
+.copyright{
+    color: rgb(164, 163, 163);
 }
 
 </style>

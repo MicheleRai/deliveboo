@@ -109,6 +109,7 @@
     margin-bottom: 0;
     margin-right: 2rem;
     font-weight: bold;
+    height: 55px;
   }
 
   .order-link:hover{
@@ -122,6 +123,7 @@
     border-radius: 10px;
     padding: .5em 1em .5em .5em;
     border: none;
+    height: 55px;
 
   }
 
