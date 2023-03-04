@@ -1,10 +1,14 @@
 <template>
     <div>
         <div class="copertina d-flex align-items-left flex-column">
-            <h1 class="mb-5">Di cosa hai voglia oggi?</h1>
-            <div class="d-flex align-items-left flex-start flex-column h-50 w-50 flex-wrap">
-                <router-link v-for="categories in arrCategories" :key="categories.id" class="btn btn-primary mx-3 my-1 px-2 py-3 fs-5"
-                    :to="{ name: 'categories', params: { slug: categories.slug } }">{{ categories.name }}</router-link>
+            <h1 class="my-5">Di cosa hai voglia oggi?</h1>
+            <div class="d-flex align-items-left h-50 w-100 flex-wrap">
+                <div class="category-card me-3 mt-5 rounded-3" style="width: 150px; height: 150px;" v-for="categories in arrCategories" :key="categories.id">
+                    <router-link :to="{ name: 'categories', params: { slug: categories.slug } }">
+                        <img :src="'storage/' + categories.image" onerror="this.src='storage/placeholder.jpeg';" alt="category" class="category-img rounded-3">
+                    </router-link>
+                    <div class="text-dark fs-4 text-center">{{ categories.name }}</div>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -66,6 +70,16 @@ export default {
 
 .rounded-pill {
     color: #03b8a9;
+}
 
+.category-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.category-card{
+    border: 2px solid #03b8a9;
 }
 </style>
