@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Category;
 use App\Dish;
-use App\Http\Controllers\Controller;
 use App\User;
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -39,10 +41,19 @@ class DishController extends Controller
 
         $menu->dishes = Dish::where('user_id', $menu->id)->get();
 
+        $menu->categories = DB::table('users')
+        ->select('*')
+        ->join('category_user','users.id','=','category_user.user_id')
+        ->join('categories','category_user.category_id','=','categories.id')
+        ->where('users.id','=', $menu->id)
+        ->get();
+
         return response()->json ([
             'success' => true,
             'results' => $menu,
         ]);
+
+
     }
 
     public function categories($category)

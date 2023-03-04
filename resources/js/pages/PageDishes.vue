@@ -13,6 +13,11 @@
         </div>
         <div class="restaurant-name-container">
             <h1 class="restaurant-name-vue">{{ arrDishes.name }}</h1>
+            <div class="categories-container">
+                <div v-for="category in arrDishes.categories" :key="category.id" class="category-tag">
+                    {{ category.name }}
+                </div>
+            </div>
         </div>
         <div class="cards-container">
             <div class="rounded-4 my-card"
@@ -24,11 +29,6 @@
                 <div class="dish-button-container"><button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button></div>
             </div>
         </div>
-        <!-- <div class="categories-container">
-            <div v-for="category in arrDishes.categories" :key="dish.id">
-                {{ arrDishes.category_id }}
-            </div>
-        </div> -->
     </div>
 </template>
 <script>
@@ -108,7 +108,6 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 75px;
     margin-bottom: 50px;
    }
 
@@ -186,6 +185,22 @@
 
    .restaurant-name-vue{
     font-size: 3em;
-    margin: 1em;
+    margin: 50px;
+    margin-bottom: 25px;
+   }
+
+   .categories-container{
+    display: flex;
+    margin-left: 50px;
+   }
+
+   .category-tag{
+    padding: .5rem 1rem;
+    background-color: #00ccbb;
+    width: fit-content;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-right: .5rem;
+    font-size: 2em;
    }
 </style>
