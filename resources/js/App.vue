@@ -1,6 +1,6 @@
 <template>
     <div>
-        <navbar @aperturaCarrello="aperturaCarrello" class="nav" />
+        <navbar @aperturaCarrello="aperturaCarrello" :counter-cart="counterCart" class="nav" />
         <div class="cart-container fixed-top m-auto">
             <!--tentativo di creare un carrello vuoto
                 <div v-if="btnCarrello==false" class="carrello-vuoto cart me-0">
@@ -35,6 +35,7 @@ export default {
             dishes_id: [],
             tot_price: null,
             btnCarrello:false,
+            counterCart: 0,
         }
     },
 
@@ -45,10 +46,12 @@ export default {
                 this.user = dish.user_id;
                 this.dishes_id.push(dish.id);
                 this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
+                this.counterCart++;
             } else if (dish.user_id == this.user) {
                 this.arrCart.push(dish);
                 this.dishes_id.push(dish.id);
                 this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
+                this.counterCart++;
             } else {
                 window.alert('Scegliere un piatto dello stesso ristorante')
             }
@@ -61,6 +64,7 @@ export default {
 
         removePrice(){
             this.tot_price = this.arrCart.reduce((acc, item) => acc + parseFloat(item.price), 0).toFixed(2);
+            this.counterCart--;
         },
         aperturaCarrello(){
             this.btnCarrello = !this.btnCarrello
