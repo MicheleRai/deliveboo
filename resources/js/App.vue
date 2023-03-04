@@ -60,6 +60,8 @@ export default {
 
         emptyCart(){
             this.arrCart = [];
+            this.counterCart = 0;
+            this.tot_price = null;
         },
 
         removePrice(){
