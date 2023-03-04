@@ -9,7 +9,7 @@
         </div>
         <div class="ps-3" v-show="tot_price">Totale: {{ tot_price }}&euro;
         </div>
-        <router-link class="ps-3" :to="{name:'order'}" v-show="tot_price">Vai all'ordine</router-link>
+        <router-link class="ps-3 btn btn-primary" :to="{name:'order'}" v-show="tot_price">Vai all'ordine</router-link>
     </div>
 </template>
 

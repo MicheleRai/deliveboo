@@ -4,12 +4,12 @@
             <img class="cover" src="../../../public/images/interni-ristorante.webp" alt="logo" onerror="this.src='storage/placeholder.jpeg';" style="width: 100vw; height: 60vh; object-fit: cover; object-position: center; opacity: 0.8">
             <div>
                 <h1 class="m-4">Risultati per "{{ arrCategories.name }}"</h1>
-                <div class="cards d-flex flex-wrap">
+                <div class="cards d-flex flex-wrap justify-content-center">
                     <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 24rem;"
                         v-for="restaurant in arrRestaurants" :key="restaurant.id"
                     >
                         <img :src="'storage/' + restaurant.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
-                        class="rounded-4" style="width: 102%; height: 50%; position: relative; left: -2px; top: -2px;">
+                        class="rounded-4" style="width: 100%; height: 50%;">
                         <div class="mx-4">
                             <h5 class="tetx-center">{{ restaurant.name }}</h5>
                             <div class="my-3">{{ restaurant.address }}</div>
