@@ -10819,11 +10819,16 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  background-color: white;
+}
+
 .copertina {
-  height: 50vh;
+  padding-top: 8em;
+  padding-left: 4em;
+  height: 70vh;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: right;
 }
 
 .mycard {
@@ -10841,6 +10846,9 @@ textarea.form-control-lg {
   box-shadow: 3px 3px 5px black;
   text-decoration: none;
   padding: 0.4rem;
+}
+.mycard .mycard-button:hover {
+  background-color: #00ccbb;
 }
 
 .category {
