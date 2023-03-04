@@ -15,7 +15,7 @@ class DishController extends Controller
         'name'        => 'required|max:50|string',
         'price'       => 'required|numeric|between:0.00,9999.99',
         'description' => 'required|string',
-        'image'       => 'required|file|mimes:jpg,jpeg,png,gif|max:1024',
+        'image'       => 'required|file|mimes:jpg,jpeg,png,gif,webp|max:1024',
     ];
 
     // TODO: cambiare il sistema di caricamento delle immagini

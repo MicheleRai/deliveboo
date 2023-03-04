@@ -26,7 +26,12 @@
                 <div class="dish-name">{{ dish.name }}</div>
                 <div class="dish-info">{{ dish.description }}</div>
                 <div class="dish-price"><span style="color: #00ccbb ;">&euro;</span> {{ dish.price }}</div>
-                <div class="dish-button-container"><button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button></div>
+                <div v-if="dish.visible==true" class="dish-button-container">
+                    <button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
+                </div>
+                <div v-else class="dish-button-container">
+                    <button class="dish-button" disabled> Piatto non disponibile</button>
+                </div>
             </div>
         </div>
     </div>

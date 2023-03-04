@@ -64,8 +64,8 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:50'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'logo_image' => ['mimes:jpg,jpeg,png,gif', 'max:1024'],
-            'cover_image' => ['mimes:jpg,jpeg,png,gif', 'max:1024'],
+            'logo_image' => ['mimes:jpg,jpeg,png,gif,webp', 'max:1024'],
+            'cover_image' => ['mimes:jpg,jpeg,png,gif,webp', 'max:1024'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
