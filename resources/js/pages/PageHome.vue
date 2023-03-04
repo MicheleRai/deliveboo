@@ -81,5 +81,8 @@ export default {
 
 .category-card{
     border: 2px solid #03b8a9;
+    &:hover{
+        opacity: 0.8;
+    }
 }
 </style>
