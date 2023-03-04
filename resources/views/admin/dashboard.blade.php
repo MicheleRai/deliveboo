@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div class="cover-container">
-        <img src="{{ asset('storage/' . Auth::user()->cover_image) }}" alt="img">
+        <img src="{{ asset('storage/' . Auth::user()->cover_image) }}" alt="img" class="cover">
     </div>
     <div class="logo-box">
         <div class="logo-container">
