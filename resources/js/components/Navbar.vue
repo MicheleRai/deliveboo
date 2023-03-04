@@ -16,7 +16,7 @@
                 </div>
                 <button @click="$emit('aperturaCarrello')" class="order-link-due">
                     <img class="img-carrello" src="../../../storage/app/public/shopping-cart.png" alt="">
-                    <div class="contatore position-absolute rounded-circle">0</div>
+                    <div class="contatore position-absolute rounded-circle"> {{ this.counterCart }}</div>
                 </button>
 
             </div>
@@ -35,6 +35,11 @@
         }
       }
     },
+
+    props: {
+        counterCart: Number,
+    },
+
     beforeMount() {
       window.addEventListener('scroll', this.handleScroll)
     },
