@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" :class="{ 'onScroll': !view.topOfPage }">
         <div class="container-fluid nav-content">
-            <div class="d-flex justify-content-between col-10">
+            <div class="d-flex justify-content-between col-12">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -12,8 +12,8 @@
 
                         <a href="/login" class="restaurant-link">Accedi</a>
                     </div>
-                    <router-link :to="{ name: 'order' }" class="order-link">Il tuo ordine</router-link>
                 </div>
+                <router-link :to="{ name: 'order' }" class="order-link">Il tuo ordine</router-link>
                 <button @click="$emit('aperturaCarrello')" class="order-link-due">
                     <img class="img-carrello" src="../../../storage/app/public/shopping-cart.png" alt="">
                     <div class="contatore position-absolute rounded-circle"> {{ this.counterCart }}</div>
@@ -100,14 +100,14 @@
     color: black;
   }
   .order-link{
-    padding: .5em 1em;
+    padding: 1em 1em .5em 1em;
     background-color: rgb(255, 200, 0);
     color: black;
     text-decoration: none;
     border-radius: 10px;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 20rem;
+    margin-right: 2rem;
     font-weight: bold;
   }
 

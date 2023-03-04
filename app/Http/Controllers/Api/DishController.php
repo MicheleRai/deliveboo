@@ -70,7 +70,7 @@ class DishController extends Controller
 
     public function paginate()
     {
-        $users = User::limit(6)->get();
+        $users = User::limit(5)->get();
         $categories = Category::all();
 
         return response()->json ([
