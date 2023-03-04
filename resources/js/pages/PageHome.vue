@@ -25,11 +25,13 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
-                            class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
+                        class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
                     </div>
                 </div>
             </div>
-
+            <div class="text-center py-5 fs-5">
+                <router-link class="restaurant-link see-all-link" :to="{ name: 'restaurants' }">Vedi tutti i ristoranti</router-link>
+            </div>
         </div>
         <div
             class="container-fluid d-flex align-items-center flex-column justify-content-center align-content-center py-5 jumbo">
@@ -84,5 +86,25 @@ export default {
     &:hover{
         opacity: 0.8;
     }
+}
+
+.restaurant-link{
+    padding: .5em 1em;
+    background-color: #3fa9f5;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 0 1em;
+    font-weight: bold;
+  }
+  .restaurant-link:hover{
+    background-color: #00ccbb;
+    color: white;
+  }
+
+.see-all-link{
+    padding: 1rem;
+    width: 25%;
+    border-radius: 20px;
 }
 </style>
