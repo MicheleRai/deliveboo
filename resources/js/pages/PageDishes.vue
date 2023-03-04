@@ -11,7 +11,9 @@
                 <img class="logo" :src="'storage/' + arrDishes.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
             </div>
         </div>
-
+        <div class="restaurant-name-container">
+            <h1 class="restaurant-name-vue">{{ arrDishes.name }}</h1>
+        </div>
         <div class="cards-container">
             <div class="rounded-4 my-card"
             v-for="dish in arrDishes.dishes" :key="dish.id">
@@ -22,6 +24,11 @@
                 <div class="dish-button-container"><button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button></div>
             </div>
         </div>
+        <!-- <div class="categories-container">
+            <div v-for="category in arrDishes.categories" :key="dish.id">
+                {{ arrDishes.category_id }}
+            </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -101,7 +108,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 200px;
+    margin-top: 75px;
     margin-bottom: 50px;
    }
 
@@ -175,5 +182,10 @@
    .dish-button:hover{
     background-color: white;
     color: black;
+   }
+
+   .restaurant-name-vue{
+    font-size: 3em;
+    margin: 1em;
    }
 </style>
