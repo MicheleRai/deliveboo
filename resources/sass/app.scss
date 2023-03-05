@@ -42,3 +42,11 @@ body{
     color: $category-grey;
     text-decoration: none;
 }
+@include media-breakpoint-down(sm){
+    .order-link{
+        display: none;
+    }
+    .order-link-due{
+        min-width: 60px;
+    }
+  }
