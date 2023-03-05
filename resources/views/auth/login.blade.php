@@ -10,9 +10,9 @@
         </div>
         <div class="col-10">
             <div class="tasti d-flex" style="position: relative; left: 1rem;">
-                <div class="p-2 rounded-top p-3 w-25" style="background-color: #f5f5f5;">{{ __('Login') }}</div>
+                <div class="p-2 rounded-top p-3 w-25 log-button" style="background-color: #f5f5f5;">{{ __('Login') }}</div>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="p-2 rounded-top bg-white p-3 w-25 border border-bottom-0 ms-1" style="text-decoration: none; color: black;">{{ __('Register') }}</a>
+                    <a href="{{ route('register') }}" class="p-2 rounded-top bg-white p-3 w-25 border border-bottom-0 ms-1 reg-button" style="text-decoration: none; color: black;">{{ __('Register') }}</a>
                 @endif
             </div>
             <form method="POST" action="{{ route('login') }}" class="rounded-4 p-5" style="background-color: #f5f5f5;">
@@ -40,8 +40,8 @@
                     @enderror
                 </div>
 
-                <div class="elemento my-3 d-flex align-items-center">
-                    <div class="form-check mx-2">
+                <div class="elemento-3 my-3 d-flex align-items-center">
+                    <div class="form-check mx-2 remember">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                         <label class="form-check-label" for="remember">
@@ -49,12 +49,12 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mx-2">
+                    <button type="submit" class="btn btn-primary mx-2 login">
                         {{ __('Login') }}
                     </button>
 
                     @if (Route::has('password.request'))
-                        <a class="btn btn-outline-dark mx-2" href="{{ route('password.request') }}">
+                        <a class="btn btn-outline-dark mx-2 forgot-password" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif
