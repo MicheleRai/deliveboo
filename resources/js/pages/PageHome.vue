@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="copertina mb-5">
+        <div class="copertina mb-3 d-flex justify-content-center align-items-start">
+            <h1 class="my-2 text-white align-self-sm-end">Di cosa hai voglia oggi?</h1>
         </div>
         <div class="container pb-5">
-            <h1 class="my-2">Di cosa hai voglia oggi?</h1>
             <div class="d-flex justify-content-center w-100 flex-wrap">
                 <div class="category-card me-3 mt-5 rounded-3 mb-3" style="width: 125px; height: 125px;" v-for="categories in arrCategories" :key="categories.id">
                     <router-link :to="{ name: 'categories', params: { slug: categories.slug } }">
@@ -16,7 +16,7 @@
         <div class="container mt-5">
             <h2 class="text-center mb-5">Ristoranti nella tua zona</h2>
             <div class="cards d-flex justify-content-center flex-wrap">
-                        <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 24rem;"
+                        <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 28rem;"
                             v-for="user in arrUsers" :key="user.id"
                         >
                             <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-            <div class="text-center py-5 fs-5">
+            <div class="text-center py-5 fs-5 d-flex justify-content-center">
                 <router-link class="restaurant-link see-all-link" :to="{ name: 'restaurants' }">Vedi tutti i ristoranti</router-link>
             </div>
         </div>
@@ -66,7 +66,7 @@ export default {
 </script>
 <style lang="scss">
 .copertina {
-    background-image: url(https://img.freepik.com/free-photo/uncooked-penne-tagliatelle-with-copy-space_23-2148360769.jpg?w=1380&t=st=1677871186~exp=1677871786~hmac=cc37785c47153a319d0a67ae9ab92a7934885275db0d2daea123b5f46c1c8ae9);
+    background-image: url(https://mykaleidoscope.ru/en/uploads/posts/2022-09/1663731150_1-mykaleidoscope-ru-p-food-on-a-black-background-yeda-oboi-1.jpg);
 }
 
 .jumbo {
