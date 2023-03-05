@@ -9,7 +9,7 @@
                         {{ objCart.name }}
                     </div>
                     <div class="col-12 col-md-5 text-center py-3 d-flex align-items-center justify-content-between">
-                        <img src="'objCart.image'" alt="img" class="me-5">
+                        <img :src="'storage/' + objCart.image" style="width: 150px; height: 80px; object-fit: cover; object-position: center" alt="img" class="me-5 ord">
                         {{ objCart.price }}&euro;
                     </div>
                 </div>
@@ -46,10 +46,6 @@
                 <div v-if="errors && errors.email_user" class="text-danger">{{ errors.email_user[0] }}</div>
                 <button type="submit" class="btn btn-warning mt-5" :disabled="arrCart.length == 0">Procedi con l'ordine</button>
             </div>
-
-
-
-
 
             <div id="bt-dropin">
             </div>

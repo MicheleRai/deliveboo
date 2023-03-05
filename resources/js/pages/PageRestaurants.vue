@@ -20,7 +20,7 @@
                 <div class="col-9 px-5">
                     <h1 class="py-5">Cosa preferisci?</h1>
                     <div class="cards d-flex flex-wrap">
-                        <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 24rem;"
+                        <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 27rem;"
                             v-for="user in arrUsers" :key="user.id"
                         >
                             <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"

@@ -2,15 +2,15 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" :class="{ 'onScroll': !view.topOfPage }">
         <div class="container-fluid nav-content">
             <div class="d-flex justify-content-between col-12">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <router-link class="me-1" :to="{ name: 'home' }"><img class="nav-img" src="../../../storage/app/public/uploads/logo-deliveboo.png" alt="Deliverboo"></router-link>
-                        <router-link class="me-1 restaurant-link" :to="{ name: 'restaurants' }">Ristoranti</router-link>
+                        <router-link class="me-1" :to="{ name: 'home' }"><img class="nav-img ms-2" src="../../../storage/app/public/uploads/logo-deliveboo.png" alt="Deliverboo"></router-link>
+                        <router-link class="restaurant-link mt-1" :to="{ name: 'restaurants' }">Ristoranti</router-link>
 
-                        <a href="/login" class="restaurant-link">Accedi</a>
+                        <a href="/login" class="restaurant-link mt-1">Accedi</a>
                     </div>
                 </div>
                 <router-link :to="{ name: 'order' }" class="order-link">Il tuo ordine</router-link>

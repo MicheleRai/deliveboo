@@ -20,10 +20,10 @@
                 </div>
             </div>
             <div class="row justify-content-center mt-2 order-dit">
-                <div class="col-3 d-flex align-items-center justify-content-center order-bot">
+                <div class="col-11 d-flex align-items-center justify-content-center order-bot">
                     <a href="{{ route('admin.orders.show', ['order' => $order->order_id ])}}" class="order-button">Dettagli ordine</a>
                 </div>
-                <div class="col-3 d-flex align-items-center justify-content-center order-bot">
+                <div class="col-11 d-flex align-items-center justify-content-center order-bot">
                     <h4>Tot Ordine: <span class="euro">&euro; {{ $order->tot_price }}</span></h4>
                 </div>
             </div>

@@ -32,7 +32,6 @@
                     </ul>
                 </div>
             </div>
-            <img src="../../../storage/app/public/placeholder.svg" alt="">
             <div class="copyright">2023© Deliveboo | Team 6 e tutti i diritti riservati</div>
         </footer>
     </div>
