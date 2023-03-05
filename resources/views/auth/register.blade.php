@@ -82,8 +82,8 @@
                     <input id="password-confirm" type="password" class="form-control bg-white" name="password_confirmation" required autocomplete="new-password">
                 </div>
 
-                <div class="elemento d-flex align-items-center my-3">
-                    <div class="d-flex flex-column align-items-center me-5">
+                <div class="elemento-7 d-flex align-items-center my-3">
+                    <div class="d-flex flex-column align-items-center me-5 logo-itm">
                         <label for="logo_image" class="col-form-label text-md-right fs-5 fw-bold">{{ __('Logo') }}</label>
 
                         <input id="logo_image" type="file" class="form-control bg-white @error('logo_image') is-invalid @enderror" name="logo_image" value="{{ old('logo_image') }}" autocomplete="logo_image">
@@ -94,7 +94,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="d-flex flex-column align-items-center ms-5">
+                    <div class="d-flex flex-column align-items-center ms-5 cover-itm">
                         <label for="cover_image" class="col-form-label text-md-right fs-5 fw-bold">{{ __('Immagine di copertina') }}</label>
 
                         <input id="cover_image" type="file" class="form-control bg-white @error('cover_image') is-invalid @enderror" name="cover_image" value="{{ old('cover_image') }}" autocomplete="cover_image">
