@@ -11,7 +11,7 @@
         <main>
             <router-view @addCart="getCart" :arr-cart="arrCart" :dishes_id="dishes_id" @emptyCart="emptyCart" :tot_price="tot_price" @removePrice="removePrice"></router-view>
         </main>
-        <footer-component/>
+        <footer-component />
     </div>
 </template>
 
@@ -91,6 +91,5 @@ export default {
     max-width: 1120px;
 
 }
-
 
 </style>

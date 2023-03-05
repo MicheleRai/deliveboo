@@ -1,36 +1,20 @@
 <template>
     <div>
-        <div class="copertina d-flex align-items-left flex-column">
-            <div class="container">
-                <h1 class="my-5">Di cosa hai voglia oggi?</h1>
-                <div class="d-flex align-items-left w-100 flex-wrap">
-                    <div class="category-card me-3 mt-5 rounded-3" style="width: 150px; height: 150px;" v-for="categories in arrCategories" :key="categories.id">
-                        <router-link :to="{ name: 'categories', params: { slug: categories.slug } }">
-                            <img :src="'storage/' + categories.image" onerror="this.src='storage/placeholder.jpeg';" alt="category" class="category-img rounded-3">
-                        </router-link>
-                        <div class="text-dark fs-4 text-center">{{ categories.name }}</div>
-                    </div>
+        <div class="copertina mb-5">
+        </div>
+        <div class="container pb-5">
+            <h1 class="my-2">Di cosa hai voglia oggi?</h1>
+            <div class="d-flex justify-content-center w-100 flex-wrap">
+                <div class="category-card me-3 mt-5 rounded-3 mb-3" style="width: 125px; height: 125px;" v-for="categories in arrCategories" :key="categories.id">
+                    <router-link :to="{ name: 'categories', params: { slug: categories.slug } }">
+                        <img :src="'storage/' + categories.image" onerror="this.src='storage/placeholder.jpeg';" alt="category" class="category-img rounded-3">
+                    </router-link>
+                    <div class="text-dark fs-4 text-center">{{ categories.name }}</div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <h2 class="text-center">Ristoranti nella tua zona</h2>
-            <!-- <div class="d-flex justify-content-center">
-                <div class="rounded-4 mycard bg-white col-2 mx-1 my-3" v-for="user in arrUsers"
-                    :key="user.id">
-                    <img :src="'storage/' + user.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';"
-                    class="rounded-4" style="width: 100%; height: 50%;">
-                    <div class="mx-4">
-                        <h5 class="tetx-center">{{ user.name }}</h5>
-                        <div class="my-3">{{ user.address }}</div>
-                        <div class="my-3">080 219 7961</div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <router-link :to="{ name: 'dishes-user', params: { slug: user.slug } }"
-                        class="m-3 rounded-5 text-white px-4 mycard-button">Vedi Menu</router-link>
-                    </div>
-                </div>
-            </div> -->
+        <div class="container mt-5">
+            <h2 class="text-center mb-5">Ristoranti nella tua zona</h2>
             <div class="cards d-flex justify-content-center flex-wrap">
                         <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 24rem;"
                             v-for="user in arrUsers" :key="user.id"

@@ -94,13 +94,17 @@
     border-radius: 10px;
     margin: 0 1em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   .restaurant-link:hover{
     background-color: #00ccbb;
     color: black;
   }
   .order-link{
-    padding: 1em 1em .5em 1em;
+    padding: .5em;
     background-color: rgb(255, 200, 0);
     color: black;
     text-decoration: none;
@@ -110,6 +114,9 @@
     margin-right: 2rem;
     font-weight: bold;
     height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .order-link:hover{
