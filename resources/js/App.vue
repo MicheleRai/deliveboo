@@ -84,7 +84,7 @@ export default {
     z-index: 1031;
 }
 .cart{
-    padding-top: 65px;
+    padding-top: 80px;
     max-width: 300px;
 }
 .cart-container{
