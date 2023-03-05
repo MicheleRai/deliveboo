@@ -226,7 +226,60 @@ width: 100%;
     font-size: 2em;
 }
 
-@media (max-width: 390px){
+
+
+@media screen and (max-width: 390px) {
+    .elemento-3{
+        flex-direction: column;
+
+        .forgot-password{
+            width: 100%;
+        }
+
+        .remember, .login, .forgot-password{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .elemento-7{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        input{
+            width: 50vw;
+        }
+
+        .logo-itm{
+            position: relative;
+            left: 18px;
+        }
+
+        .cover-itm{
+            position: relative;
+            left: -30px;
+        }
+    }
+
+    .order-info{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .order-dit{
+        flex-direction: column;
+        width: 90vw;
+
+        .order-bot{
+            width: 90vw;
+            margin-top: 15px;
+        }
+    }
+
+    .cont-show{
+        flex-direction: column;
+    }
+
     .logo-container{
         width: 200px;
         height: 200px;
@@ -244,9 +297,16 @@ width: 100%;
     .tag-restaurant{
         font-size: 1.2em;
     }
-
     .cover{
         height: 100%;
         width: auto;
     }
-   }
+}
+
+
+
+
+
+
+
+
