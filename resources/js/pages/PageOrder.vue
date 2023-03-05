@@ -44,14 +44,14 @@
                 <label class="text-light" for="email_user">E-mail</label>
                 <input type="email" class="form-control" name="email_user" id="email_user" v-model="fields.email_user" />
                 <div v-if="errors && errors.email_user" class="text-danger">{{ errors.email_user[0] }}</div>
-                <button type="submit" class="btn btn-warning mt-5" :disabled="arrCart.length == 0">Procedi con l'ordine</button>
+
             </div>
 
-            <div id="bt-dropin">
+            <div class="col-10" id="bt-dropin">
             </div>
             <input id="nonce" type="hidden" />
-
-            <div v-if="success" class="alert alert-success mt-3">
+            <button type="submit" class="btn btn-warning mt-5 col-3" :disabled="arrCart.length == 0">Procedi con l'ordine</button>
+            <div v-if="success" class="alert alert-success mt-3 d-block col-10 text-center">
                 Ordine ricevuto!
             </div>
 
@@ -178,4 +178,5 @@ export default {
     color: #07CCBB;
     box-shadow: 10px 10px 16px 0px #ededed;
 }
+
 </style>
