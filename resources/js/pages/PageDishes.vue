@@ -74,7 +74,6 @@
     background-position:center center;
     background-repeat:no-repeat;
     border: solid #00ccbb 10px;
-    margin: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +90,6 @@
    .cover-container{
     width: 100%;
     height: 500px;
-    margin: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,13 +188,15 @@
 
    .restaurant-name-vue{
     font-size: 3em;
-    margin: 50px;
+    margin-top: 175px;
     margin-bottom: 25px;
+    text-align: center;
    }
 
    .categories-container{
     display: flex;
-    margin-left: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
    }
 
    .category-tag{
@@ -207,5 +207,19 @@
     margin-top: 20px;
     margin-right: .5rem;
     font-size: 2em;
+   }
+
+   @media (max-width: 390px){
+    .logo-container{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: -200px;
+   }
+
+   .restaurant-name-vue{
+    margin-top: 25px;
+   }
+
    }
 </style>

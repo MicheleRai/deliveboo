@@ -27,7 +27,7 @@
                     <h2>App</h2>
                     <ul class="list-unstyled">
                         <li><a class="text-decoration-none text-white" href="">
-                            <img src="../../../storage/app/public/app-store-badges-it.svg" alt="">
+                            <!-- <img src="../../../storage/app/public/app-store-badges-it.svg" alt=""> -->
                         </a></li>
                     </ul>
                 </div>
