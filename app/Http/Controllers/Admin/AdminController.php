@@ -44,7 +44,7 @@ class AdminController extends Controller
             'name' => 'required|string|max:50',
             'address' => 'required|string|max:50',
             'vat_number' => 'required|numeric|digits:11',
-            'logo_image' => 'required|file|mimes:jpg,jpeg,png,gif|max:1024',
+            'logo_image' => 'required|file|mimes:jpg,jpeg,png,gif,webp|max:1024',
             'cover_image' => 'required|file|mimes:jpg,jpeg,png,gif,webp|max:1024',
         ]);
 

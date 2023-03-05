@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
                 'vat_number' => '01234567892',
                 'slug' => 'pizzeria-da-andrea',
                 'logo_image' => 'uploads/logo-pizzeria.jpg',
-                'cover_image' => 'uploads/logo-pizzeria.jpg',
+                'cover_image' => 'uploads/pizza-intera.webp',
             ],
             [
                 'email' => 'dakenta@gmail.com',

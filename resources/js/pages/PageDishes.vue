@@ -22,7 +22,8 @@
         <div class="cards-container">
             <div class="rounded-4 my-card"
             v-for="dish in arrDishes.dishes" :key="dish.id">
-                <div class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
+                <div v-if="dish.visible==true" class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
+                <div v-else class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" style="filter: grayscale(100%);" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
                 <div class="dish-name">{{ dish.name }}</div>
                 <div class="dish-info">{{ dish.description }}</div>
                 <div class="dish-price"><span style="color: #00ccbb ;">&euro;</span> {{ dish.price }}</div>
@@ -30,7 +31,7 @@
                     <button class="dish-button" @click="$emit('addCart', dish)"> Aggiungi al carrello</button>
                 </div>
                 <div v-else class="dish-button-container">
-                    <button class="dish-button" disabled> Piatto non disponibile</button>
+                    <button class="dish-button" style="filter: grayscale(100%);" disabled> Piatto non disponibile</button>
                 </div>
             </div>
         </div>
