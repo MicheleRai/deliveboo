@@ -50,3 +50,10 @@ body{
         min-width: 60px;
     }
   }
+
+  @media screen and (max-width: 390px) {
+    .contenitoremio{
+        display: flex;
+        flex-direction: column;
+    }
+  }

@@ -10854,3 +10854,18 @@ body {
   color: #515151;
   text-decoration: none;
 }
+
+@media (max-width: 575.98px) {
+  .order-link {
+    display: none;
+  }
+  .order-link-due {
+    min-width: 60px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .contenitoremio {
+    display: flex;
+    flex-direction: column;
+  }
+}

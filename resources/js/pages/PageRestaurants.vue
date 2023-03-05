@@ -3,7 +3,7 @@
         <div class="contenitore">
             <img src="../../../public/images/chef.webp"
                 alt="" class="w-100" style="width: 100vw; height: 60vh; object-fit: cover; object-position: center; opacity: 0.8">
-            <div class="row bg-white">
+            <div class="row bg-white contenitoremio">
                 <!-- parte sinistra -->
                 <div class="col-3 p-5 col-sinistra">
                     <div>
