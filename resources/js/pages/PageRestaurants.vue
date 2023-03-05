@@ -3,9 +3,9 @@
         <div class="contenitore">
             <img src="../../../public/images/chef.webp"
                 alt="" class="w-100" style="width: 100vw; height: 60vh; object-fit: cover; object-position: center; opacity: 0.8">
-            <div class="row bg-white contenitoremio">
+            <div class="row bg-white contenitoremio d-flex justify-content-center">
                 <!-- parte sinistra -->
-                <div class="col-3 p-5 col-sinistra">
+                <div class="col-2 p-5 col-sinistra">
                     <div>
                         <h3 class="grey-line">Categorie</h3>
                         <div class="categories d-flex flex-column">
@@ -17,7 +17,7 @@
 
                 </div>
                 <!-- parte destra -->
-                <div class="col-9 px-5">
+                <div class="col-10 px-5 m-auto">
                     <h1 class="py-5">Cosa preferisci?</h1>
                     <div class="cards d-flex flex-wrap">
                         <div class="rounded-4 mb-4 me-4 mycard" style="width: 14rem; height: 27rem;"

@@ -82,7 +82,7 @@ class UserSeeder extends Seeder
                 'vat_number' => '01224567891',
                 'slug' => 'zio-mamo',
                 'logo_image' => 'uploads/logo-standard2.webp',
-                'cover_image' => 'uploads/ritorante.webp',
+                'cover_image' => 'uploads/ristorante.webp',
             ],
             [
                 'email' => 'lalocanda@gmail.com',
