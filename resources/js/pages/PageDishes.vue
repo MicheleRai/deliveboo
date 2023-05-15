@@ -2,13 +2,13 @@
     <div class="big-box">
         <!-- COPERTINA -->
         <div class="cover-container">
-            <img class="cover" :src="'storage/' + arrDishes.cover_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
+            <img class="cover" :src="'/storage/' + arrDishes.cover_image" alt="logo" onerror="this.src='../../../storage/placeholder.jpeg';">
         </div>
 
         <!-- LOGO -->
         <div class="logo-box">
             <div class="logo-container">
-                <img class="logo" :src="'storage/' + arrDishes.logo_image" alt="logo" onerror="this.src='storage/placeholder.jpeg';">
+                <img class="logo" :src="'/storage/' + arrDishes.logo_image" alt="logo" onerror="this.src='../../../storage/placeholder.jpeg';">
             </div>
         </div>
         <div class="restaurant-name-container">
@@ -22,8 +22,8 @@
         <div class="cards-container">
             <div class="rounded-4 my-card"
             v-for="dish in arrDishes.dishes" :key="dish.id">
-                <div v-if="dish.visible==true" class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
-                <div v-else class="dish-img-container rounded-4"><img :src="'storage/' + dish.image" alt="image" style="filter: grayscale(100%);" onerror="this.src='storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
+                <div v-if="dish.visible==true" class="dish-img-container rounded-4"><img :src="'/storage/' + dish.image" alt="image" onerror="this.src='../../../storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
+                <div v-else class="dish-img-container rounded-4"><img :src="'/storage/' + dish.image" alt="image" style="filter: grayscale(100%);" onerror="this.src='../../../storage/placeholder.jpeg';" class="rounded-4 dish-img"></div>
                 <div class="dish-name">{{ dish.name }}</div>
                 <div class="dish-info">{{ dish.description }}</div>
                 <div class="dish-price"><span style="color: #00ccbb ;">&euro;</span> {{ dish.price }}</div>

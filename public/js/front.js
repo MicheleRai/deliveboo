@@ -5769,7 +5769,7 @@ var render = function render() {
     attrs: {
       src: __webpack_require__(/*! ../../../public/images/interni-ristorante.webp */ "./public/images/interni-ristorante.webp"),
       alt: "logo",
-      onerror: "this.src='storage/placeholder.jpeg';"
+      onerror: "this.src='../../../storage/placeholder.jpeg';"
     }
   }), _vm._v(" "), _c("div", [_c("h1", {
     staticClass: "m-4"
@@ -5790,9 +5790,9 @@ var render = function render() {
         height: "50%"
       },
       attrs: {
-        src: "storage/" + restaurant.logo_image,
+        src: "/storage/" + restaurant.logo_image,
         alt: "logo",
-        onerror: "this.src='storage/placeholder.jpeg';"
+        onerror: "this.src='../../../storage/placeholder.jpeg';"
       }
     }), _vm._v(" "), _c("div", {
       staticClass: "mx-4"
@@ -5845,9 +5845,9 @@ var render = function render() {
   }, [_c("img", {
     staticClass: "cover",
     attrs: {
-      src: "storage/" + _vm.arrDishes.cover_image,
+      src: "/storage/" + _vm.arrDishes.cover_image,
       alt: "logo",
-      onerror: "this.src='storage/placeholder.jpeg';"
+      onerror: "this.src='../../../storage/placeholder.jpeg';"
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "logo-box"
@@ -5856,9 +5856,9 @@ var render = function render() {
   }, [_c("img", {
     staticClass: "logo",
     attrs: {
-      src: "storage/" + _vm.arrDishes.logo_image,
+      src: "/storage/" + _vm.arrDishes.logo_image,
       alt: "logo",
-      onerror: "this.src='storage/placeholder.jpeg';"
+      onerror: "this.src='../../../storage/placeholder.jpeg';"
     }
   })])]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-name-container"
@@ -5882,9 +5882,9 @@ var render = function render() {
     }, [_c("img", {
       staticClass: "rounded-4 dish-img",
       attrs: {
-        src: "storage/" + dish.image,
+        src: "/storage/" + dish.image,
         alt: "image",
-        onerror: "this.src='storage/placeholder.jpeg';"
+        onerror: "this.src='../../../storage/placeholder.jpeg';"
       }
     })]) : _c("div", {
       staticClass: "dish-img-container rounded-4"
@@ -5894,9 +5894,9 @@ var render = function render() {
         filter: "grayscale(100%)"
       },
       attrs: {
-        src: "storage/" + dish.image,
+        src: "/storage/" + dish.image,
         alt: "image",
-        onerror: "this.src='storage/placeholder.jpeg';"
+        onerror: "this.src='../../../storage/placeholder.jpeg';"
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "dish-name"
