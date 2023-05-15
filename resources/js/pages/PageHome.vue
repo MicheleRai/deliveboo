@@ -66,7 +66,7 @@ export default {
 </script>
 <style lang="scss">
 .copertina {
-    background-image: url(https://mykaleidoscope.ru/en/uploads/posts/2022-09/1663731150_1-mykaleidoscope-ru-p-food-on-a-black-background-yeda-oboi-1.jpg);
+    background-image: url(https://img.freepik.com/free-photo/vintage-old-rustic-cutlery-dark_1220-4886.jpg?w=1800&t=st=1681937508~exp=1681938108~hmac=b964e01788de9eec4f9c9762fd505476bfdfe3913349555724e97b6f54dfaeca);
 }
 
 .jumbo {

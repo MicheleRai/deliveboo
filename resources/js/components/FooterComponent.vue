@@ -45,7 +45,7 @@ export default {
 </script>
 <style lang="scss">
 .footer-container {
-  background-image: url(https://fabrica22.sk/assets/pictures/global/_w1920h840/headerfabrica.png);
+  background-image: url(https://black.cescaphe.com/wp-content/uploads/2018/03/footer-bg-2.jpg);
   z-index: 1;
   background-size: cover;
 
