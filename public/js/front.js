@@ -6462,7 +6462,7 @@ var routes = [{
   props: true
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]({
-  mode: 'hash',
+  mode: 'history',
   routes: routes
 });
 new vue__WEBPACK_IMPORTED_MODULE_6__["default"]({
